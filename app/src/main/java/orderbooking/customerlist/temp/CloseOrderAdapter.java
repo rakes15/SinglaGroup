@@ -387,8 +387,8 @@ public class CloseOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 		//TODO: TableLayout3 set
 		tableLayout3.removeAllViewsInLayout();
 		tableLayout3.removeAllViews();
-		int TotalOverDueAmt = dataset.getTotalOverDueAmt();
-		int ExceedAmt = Integer.valueOf(dataset.getExceedAmt());
+		double TotalOverDueAmt = dataset.getTotalOverDueAmt();
+		double ExceedAmt = dataset.getExceedAmt();
 		if (TotalOverDueAmt > 0 && ExceedAmt <=0){
 			//TODO: Over Due Amount
 			v = LayoutInflater.from(context).inflate(R.layout.table_row, tableLayout3, false);
@@ -421,7 +421,7 @@ public class CloseOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 			v.setBackgroundColor(context.getResources().getColor(R.color.Yellow));
 			tableLayout3.addView(CustomTextView.setTableRow2Columns(context,v,"Credit limit Exceed By"," ₹"+dataset.getExceedAmt()));
 		}
-		int CreditLimitExceed = (dataset.getTotalAmount()+dataset.getTotalDueAmt())-Integer.valueOf(dataset.getCreditLimit());
+		double CreditLimitExceed = (dataset.getTotalAmount()+dataset.getTotalDueAmt())-Integer.valueOf(dataset.getCreditLimit());
 		if (CreditLimitExceed>0 && dataset.getTotalAmount()>0){
 			//TODO: 10th Row
 			v = LayoutInflater.from(context).inflate(R.layout.table_row, tableLayout3, false);

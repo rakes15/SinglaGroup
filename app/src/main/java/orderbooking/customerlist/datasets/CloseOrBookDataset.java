@@ -9,11 +9,12 @@ public class CloseOrBookDataset implements Serializable {
     private static final long serialVersionUID = 1L;
 
     String PartyID,PartyName,SubPartyID,SubParty,AgentID,AgentName,Mobile,City,State,Address,OrderNo,OrderDate,Godown,UserName;
-    int SubPartyApplicable,itemCount,tBookQty,totalAmount,creditDays,totalDueAmt,totalOverDueAmt,exceedAmt;
+    int SubPartyApplicable,itemCount,creditDays;
     String orderID,fairName,lastBookDate,empCVName,empCVType,refName,remarks,creditLimit,EntryDate;
     String Email,AccountNo,AccountHolderName,IFSCCOde,IDName,GSTIN,AvgOverDueDays,AvgDueDays;
     String PricelistID,Label,UnderName;
-    public CloseOrBookDataset(String PartyID, String PartyName,String SubPartyID,String SubParty, String AgentID, String AgentName, String Mobile, String City, String State, String Address, String OrderNo,String OrderDate, int SubPartyApplicable,String Godown,String UserName,String orderID,String fairName,String lastBookDate,String empCVName,String empCVType,String refName,String remarks,String creditLimit,int itemCount,int  tBookQty,int  totalAmount,int  creditDays,int  totalDueAmt,int  totalOverDueAmt,int  exceedAmt,String EntryDate,String Email,String AccountNo,String AccountHolderName,String IFSCCOde,String IDName,String GSTIN,String AvgOverDueDays,String AvgDueDays,String PricelistID,String Label,String UnderName) {
+    double tBookQty,totalAmount,totalDueAmt,totalOverDueAmt,exceedAmt;
+    public CloseOrBookDataset(String PartyID, String PartyName,String SubPartyID,String SubParty, String AgentID, String AgentName, String Mobile, String City, String State, String Address, String OrderNo,String OrderDate, int SubPartyApplicable,String Godown,String UserName,String orderID,String fairName,String lastBookDate,String empCVName,String empCVType,String refName,String remarks,String creditLimit,int itemCount,double  tBookQty,double  totalAmount,int  creditDays,double  totalDueAmt,double  totalOverDueAmt,double  exceedAmt,String EntryDate,String Email,String AccountNo,String AccountHolderName,String IFSCCOde,String IDName,String GSTIN,String AvgOverDueDays,String AvgDueDays,String PricelistID,String Label,String UnderName) {
 
         this.PartyID = PartyID;
         this.PartyName = PartyName;
@@ -185,19 +186,19 @@ public class CloseOrBookDataset implements Serializable {
         this.itemCount = itemCount;
     }
 
-    public Integer getTBookQty() {
+    public double getTBookQty() {
         return tBookQty;
     }
 
-    public void setTBookQty(Integer tBookQty) {
+    public void setTBookQty(double tBookQty) {
         this.tBookQty = tBookQty;
     }
 
-    public Integer getTotalAmount() {
+    public double getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(Integer totalAmount) {
+    public void setTotalAmount(double totalAmount) {
         this.totalAmount = totalAmount;
     }
 
@@ -254,27 +255,27 @@ public class CloseOrBookDataset implements Serializable {
         this.creditLimit = creditLimit;
     }
 
-    public int getTotalDueAmt() {
+    public double getTotalDueAmt() {
         return totalDueAmt;
     }
 
-    public void setTotalDueAmt(int totalDueAmt) {
+    public void setTotalDueAmt(double totalDueAmt) {
         this.totalDueAmt = totalDueAmt;
     }
 
-    public Integer getTotalOverDueAmt() {
+    public double getTotalOverDueAmt() {
         return totalOverDueAmt;
     }
 
-    public void setTotalOverDueAmt(Integer totalOverDueAmt) {
+    public void setTotalOverDueAmt(double totalOverDueAmt) {
         this.totalOverDueAmt = totalOverDueAmt;
     }
 
-    public Integer getExceedAmt() {
+    public double getExceedAmt() {
         return exceedAmt;
     }
 
-    public void setExceedAmt(Integer exceedAmt) {
+    public void setExceedAmt(double exceedAmt) {
         this.exceedAmt = exceedAmt;
     }
 

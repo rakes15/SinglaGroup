@@ -143,9 +143,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         super.onCreate(savedInstanceState);
 
         if (isGooglePlayServicesAvailable(this)){
-            Toast.makeText(this, "Avialable", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Avialable", Toast.LENGTH_SHORT).show();
         }else {
-            Toast.makeText(this, "Not Avialable", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Not Avialable", Toast.LENGTH_SHORT).show();
         }
         if(CommanStatic.Screenshot == 0 ){getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);}  getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_main);

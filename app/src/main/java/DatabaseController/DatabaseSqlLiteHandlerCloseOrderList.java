@@ -248,7 +248,48 @@ public class DatabaseSqlLiteHandlerCloseOrderList {
             do {
                 String Godown = cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_GODOWN))+"\t\t Total Order :"+getGodownOrderCount(cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_GODOWN)));
                 //System.out.println(Godown);
-                dataList.add(new CloseOrBookDataset(cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_PARTY_ID)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_PARTY_NAME)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_SUB_PARTY_ID)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_SUB_PARTY_NAME)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_AGENT_ID)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_AGENT_NAME)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_MOBILE)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_CITY)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_STATE)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_CITY)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ORDER_NO)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ORDER_DATE)),cursor.getInt(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_SUB_PARTY_APPLICABLE)),Godown,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_USER_NAME)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ORDER_ID)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_FAIR_NAME)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_LAST_BOOKED_DATE)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_EMP_CV_NAME)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_EMP_CV_TYPE)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_REFERENCE_NAME)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_REMARKS)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_CREDIT_LIMIT)),cursor.getInt(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ITEM_COUNT)),cursor.getInt(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_TOTAL_BOOKED_QTY)),cursor.getInt(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_TOTAL_AMOUNT)),cursor.getInt(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_CREDIT_DAYS)),cursor.getInt(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_TOTAL_DUE_AMOUNT)),cursor.getInt(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_TOTAL_OVER_DUE_AMOUNT)),cursor.getInt(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_EXCEED_AMOUNT)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ENTRY_DATE)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_EMAIL)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ACCOUNT_NO)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ACCOUNT_HOLDER_NAME)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_IFSC_CODE)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ID_NAME)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_GSTIN)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_AVG_OVER_DUE_DAYS)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_AVG_DUE_DAYS)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_PRICE_LIST_ID)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_LABEL)),cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_UNDER_NAME))));
+                dataList.add(new CloseOrBookDataset(
+                        cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_PARTY_ID))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_PARTY_NAME))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_SUB_PARTY_ID))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_SUB_PARTY_NAME))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_AGENT_ID))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_AGENT_NAME))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_MOBILE))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_CITY))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_STATE))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_CITY))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ORDER_NO))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ORDER_DATE))
+                        ,cursor.getInt(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_SUB_PARTY_APPLICABLE))
+                        ,Godown,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_USER_NAME))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ORDER_ID))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_FAIR_NAME))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_LAST_BOOKED_DATE))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_EMP_CV_NAME))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_EMP_CV_TYPE))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_REFERENCE_NAME))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_REMARKS))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_CREDIT_LIMIT))
+                        ,cursor.getInt(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ITEM_COUNT))
+                        ,cursor.getDouble(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_TOTAL_BOOKED_QTY))
+                        ,cursor.getDouble(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_TOTAL_AMOUNT))
+                        ,cursor.getInt(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_CREDIT_DAYS))
+                        ,cursor.getDouble(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_TOTAL_DUE_AMOUNT))
+                        ,cursor.getDouble(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_TOTAL_OVER_DUE_AMOUNT))
+                        ,cursor.getDouble(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_EXCEED_AMOUNT))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ENTRY_DATE))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_EMAIL))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ACCOUNT_NO))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ACCOUNT_HOLDER_NAME))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_IFSC_CODE))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_ID_NAME))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_GSTIN))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_AVG_OVER_DUE_DAYS))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_AVG_DUE_DAYS))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_PRICE_LIST_ID))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_LABEL))
+                        ,cursor.getString(cursor.getColumnIndex(SINGLA_CLOSE_ORDER_UNDER_NAME))));
             } while (cursor.moveToNext());
             // closing connection
             cursor.close();
