@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal|center_vertical">
+    <TextView
+        android:id="@+id/content1"
+        style="@style/CustomTinySmallTextViewContent"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_column="1"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="Date" />
+    <TextView
+        android:id="@+id/content2"
+        style="@style/CustomTinySmallTextViewContent"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_column="2"
+        android:visibility="visible"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="Type" />
+    <TextView
+        android:id="@+id/content3"
+        style="@style/CustomTinySmallTextViewContent"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_column="3"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="Vch/Bill No." />
+    <TextView
+        android:id="@+id/content4"
+        style="@style/CustomTinySmallTextViewContent"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_column="4"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="Particulars" />
+    <TextView
+        android:id="@+id/content5"
+        style="@style/CustomTinySmallTextViewContent"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_column="5"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="Debit" />
+    <TextView
+        android:id="@+id/content6"
+        style="@style/CustomTinySmallTextViewContent"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_column="6"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="Credit" />
+    <TextView
+        android:id="@+id/content7"
+        style="@style/CustomTinySmallTextViewContent"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_column="7"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="Balance" />
+</TableRow>

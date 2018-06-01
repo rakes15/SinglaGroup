@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal|center_vertical">
+    <ImageView
+        android:id="@+id/content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:cropToPadding="true"
+        android:layout_column="1"
+        android:visibility="visible"
+        android:layout_margin="@dimen/padding1dp"
+        android:src="@drawable/ic_contact_phone_grey"/>
+    <TextView
+        android:id="@+id/content2"
+        style="@style/CustomSmallTextViewContent"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="@dimen/txtSize12"
+        android:layout_column="2"
+        android:layout_weight="1"
+        android:singleLine="false"
+        android:layout_margin="@dimen/padding1dp"
+        android:padding="6dp"
+        android:text="Skill" />
+    <TextView
+        android:id="@+id/content3"
+        style="@style/CustomSmallTextViewContent"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="@dimen/txtSize12"
+        android:textStyle="bold"
+        android:layout_column="3"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:layout_margin="@dimen/padding1dp"
+        android:padding="6dp"
+        android:text="Ext" />
+    <TextView
+        android:id="@+id/content4"
+        style="@style/CustomSmallTextViewContent"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="@dimen/txtSize12"
+        android:layout_column="4"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:layout_margin="@dimen/padding1dp"
+        android:padding="6dp"
+        android:text="Phone Status" />
+    <TextView
+        android:id="@+id/content5"
+        style="@style/CustomSmallTextViewContent"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="@dimen/txtSize12"
+        android:layout_column="5"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:layout_margin="@dimen/padding1dp"
+        android:padding="6dp"
+        android:text="Duration" />
+</TableRow>

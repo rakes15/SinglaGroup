@@ -1,0 +1,30 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_height">200dp</dimen>
+    <dimen name="padding1dp">1dp</dimen>
+    <dimen name="padding2dp">2dp</dimen>
+    <dimen name="padding3dp">3dp</dimen>
+    <dimen name="padding5dp">5dp</dimen>
+    <dimen name="padding8dp">8dp</dimen>
+    <dimen name="padding10dp">10dp</dimen>
+    <dimen name="padding15dp">15dp</dimen>
+    <dimen name="padding16dp">16dp</dimen>
+    <dimen name="padding20dp">20dp</dimen>
+    <dimen name="padding30dp">30dp</dimen>
+    <dimen name="padding32dp">32dp</dimen>
+    <dimen name="padding40dp">40dp</dimen>
+    <dimen name="padding48dp">48dp</dimen>
+    <dimen name="padding50dp">50dp</dimen>
+    <dimen name="padding60dp">60dp</dimen>
+    <dimen name="padding64dp">64dp</dimen>
+    <dimen name="padding70dp">70dp</dimen>
+    <dimen name="padding100dp">100dp</dimen>
+    <dimen name="padding130dp">130dp</dimen>
+    <dimen name="padding140dp">140dp</dimen>
+    <dimen name="padding150dp">150dp</dimen>
+    <dimen name="padding180dp">180dp</dimen>
+    <dimen name="txtSize6">6sp</dimen>
+    <dimen name="txtSize">8sp</dimen>
+    <dimen name="txtSize10">10sp</dimen>
+    <dimen name="txtSize12">12sp</dimen>
+</resources>

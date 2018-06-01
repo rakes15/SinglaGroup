@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            style="@style/CustomSmallTextViewHeader"
+            android:padding="@dimen/padding10dp"
+            android:textColor="@color/colorAccent"
+            android:text="Auto launch module"/>
+        <RelativeLayout
+            android:id="@+id/RelativeLayout_Spinner"
+            style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+            android:gravity="center_horizontal"
+            android:background="@drawable/edittext_border"
+            android:layout_margin="@dimen/padding5dp"
+            android:layout_below="@+id/text_type"
+            android:paddingEnd="10dp">
+
+            <com.singlagroup.customwidgets.CommonSearchableSpinner
+                android:id="@+id/Spinner_Auto_launch_module"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/padding5dp"
+                app:hintText="Select Default Module"/>
+            <TextView
+                android:id="@+id/text_view"
+                style="@style/CustomSmallTextViewHeaderMatchParent"
+                android:gravity="start"
+                android:visibility="visible"
+                android:padding="@dimen/padding20dp"
+                android:layout_centerVertical="true"
+                android:text="Select Default Module" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

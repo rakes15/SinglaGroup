@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircleProgressView="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/AliceBlue"
+    android:gravity="center_horizontal">
+    <RelativeLayout
+        android:id="@+id/RelativeAuto"
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+        <TextView
+            android:id="@+id/text"
+            style="@style/CustomSmallTextViewHeaderMatchParent"
+            android:padding="@dimen/padding10dp"
+            android:text="Waiting for automatically detect an sms sent to"/>
+
+        <TextView
+            android:id="@+id/textview_editMobileNo"
+            style="@style/CustomMediumTextViewHeaderMatchParent"
+            android:padding="@dimen/padding10dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_below="@+id/text"
+            android:gravity="left|center_vertical"/>
+        <TextView
+            android:id="@+id/textview_time"
+            style="@style/CustomSmallTextViewHeader"
+            android:padding="@dimen/padding15dp"
+            android:layout_below="@+id/textview_editMobileNo"
+            android:layout_alignParentRight="true"
+            android:text="02:00"/>
+        <ProgressBar
+            android:id="@+id/progressBarOtpDetect"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_below="@+id/textview_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding15dp"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/textview_VerifyMannual"
+        style="@style/CustomMediumTextViewHeaderMatchParent"
+        android:padding="@dimen/padding15dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorPrimary"
+        android:text="Verify Mannual"/>
+    <LinearLayout
+        style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+        android:padding="@dimen/padding50dp"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalBothWrap"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/Text_OTP_Resend"
+                style="@style/CustomSmallTextViewHeader"
+                android:layout_margin="@dimen/padding5dp"
+                android:text="Re-send OTP"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalBothWrap"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/Text_ChangeMobileToVerify"
+                style="@style/CustomSmallTextViewHeader"
+                android:layout_margin="@dimen/padding5dp"
+                android:text="Change your mobile No."/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinearManual"
+        android:visibility="gone"
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+            android:padding="@dimen/padding10dp"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/Text_OTP"
+                style="@style/CustomLargeTextViewHeader"
+                android:layout_margin="@dimen/padding5dp"
+                android:text="OTP :"/>
+            <EditText
+                android:id="@+id/editText_OTP"
+                style="@style/CustomEditText"
+                android:layout_margin="@dimen/padding5dp"
+                android:hint="Enter OTP"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+            android:padding="@dimen/padding10dp"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/Button_Verify"
+                style="@style/CustomButtonWrap"
+                android:text="Verify" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

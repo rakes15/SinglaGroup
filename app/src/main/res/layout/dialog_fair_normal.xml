@@ -1,0 +1,71 @@
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="@dimen/padding30dp"
+	android:gravity="center_horizontal" >
+	<TextView
+		android:id="@+id/text_msg"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="10dp"
+		android:gravity="center_horizontal"
+		android:textSize="18sp"
+		android:visibility="gone"
+		android:text="Are You Sure to Approved?" />
+	<LinearLayout
+		android:id="@+id/Linear"
+		android:layout_below="@+id/text_msg"
+		style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+		<TextView
+			android:id="@+id/text_showroom"
+			style="@style/CustomSmallTextViewHeaderMatchParent"
+			android:padding="10dp"
+			android:gravity="center_horizontal"
+			android:text="Showroom" />
+		<Spinner
+			android:id="@+id/spinner_Godown"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/edittext_border"
+			android:layout_marginTop="10dp"
+			android:layout_centerHorizontal="true"
+			android:padding="5dp" />
+		<LinearLayout
+			android:id="@+id/Linear_RunningFair"
+			style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+			android:visibility="gone">
+			<TextView
+				android:id="@+id/text_running_fair"
+				style="@style/CustomSmallTextViewHeaderMatchParent"
+				android:padding="10dp"
+				android:gravity="center_horizontal"
+				android:text="Running Fair" />
+			<Spinner
+				android:id="@+id/spinner_running_fair"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/edittext_border"
+				android:layout_marginTop="10dp"
+				android:layout_centerHorizontal="true"
+				android:padding="5dp" />
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center_horizontal"
+		android:layout_below="@+id/Linear"
+		android:padding="20dp"
+		android:orientation="horizontal" >
+	        <Button
+               android:id="@+id/btn_ok"
+               style="@style/CustomButtonWrap"
+               android:text="OK" />
+	        <Button
+               android:id="@+id/btn_cancel"
+                style="@style/CustomButtonWrap"
+               android:layout_marginLeft="20dp"
+               android:layout_toRightOf="@+id/btn_ok"
+               android:text="CANCEL" />
+        </LinearLayout>
+</RelativeLayout>

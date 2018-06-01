@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView android:id="@+id/content_column_1"
+        style="@style/CustomSmallTextViewContent"
+        android:padding="5dp"
+        android:textColor="@color/Brown"
+        android:layout_margin="@dimen/padding1dp"
+        android:layout_weight="1"
+        android:layout_column="1"
+        android:singleLine="false"/>
+    <TextView android:id="@+id/content_column_2"
+        style="@style/CustomSmallTextViewContent"
+        android:padding="5dp"
+        android:layout_margin="@dimen/padding1dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_weight="1"
+        android:layout_column="2"
+        android:singleLine="false"/>
+    <TextView android:id="@+id/content_column_3"
+        style="@style/CustomSmallTextViewContent"
+        android:padding="5dp"
+        android:layout_margin="@dimen/padding1dp"
+        android:textColor="@color/Purple"
+        android:layout_weight="1"
+        android:layout_column="3"
+        android:singleLine="false"/>
+</TableRow>

@@ -1,0 +1,366 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/padding15dp">
+
+    <Spinner
+        android:id="@+id/Spinner_UserType"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:spinnerMode="dropdown"
+        android:padding="5dp"
+        android:background="@drawable/custom_spinner_background"/>
+    <!-- Login progress -->
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/LinearLayout_Emp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/EditText_EmpID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Employee ID"
+                        android:imeOptions="actionUnspecified"
+                        android:maxLines="1"
+                        android:maxLength="5"
+                        android:singleLine="true"/>
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/Button_Verify">
+                    <EditText
+                        android:id="@+id/EditText_RegMobileNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_mobile"
+                        android:imeOptions="actionUnspecified"
+                        android:maxLines="1"
+                        android:maxLength="10"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding5dp"
+                    android:background="@drawable/linear_layout_border"
+                    android:orientation="vertical">
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressBarDivision"
+                        android:visibility="gone"
+                        android:layout_gravity="right" />
+                    <Spinner
+                        android:id="@+id/Spinner_Division"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:spinnerMode="dropdown"
+                        android:padding="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/LinearLayout_OtherForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding5dp"
+                    android:background="@drawable/linear_layout_border"
+                    android:orientation="vertical">
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressBarDivision1"
+                        android:visibility="gone"
+                        android:layout_gravity="right" />
+                    <Spinner
+                        android:id="@+id/Spinner_Division1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:spinnerMode="dropdown"
+                        android:padding="5dp" />
+                </LinearLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/FirmName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_firm_name"
+                        android:imeOptions="actionUnspecified"
+                        android:maxLines="1"
+                        android:maxLength="50"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_name"
+                        android:imeOptions="actionUnspecified"
+                        android:maxLines="1"
+                        android:maxLength="50"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/Designation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_designation"
+                        android:imeOptions="actionUnspecified"
+                        android:maxLines="1"
+                        android:maxLength="50"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/Address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_address"
+                        android:maxLength="100"
+                        android:imeOptions="actionUnspecified"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/EditText_country"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:editable="false"
+                        android:text="India"
+                        android:hint="@string/prompt_country"/>
+
+
+                </android.support.design.widget.TextInputLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding5dp"
+                    android:background="@drawable/linear_layout_border"
+                    android:orientation="vertical">
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressBarCountry"
+                        android:visibility="gone"
+                        android:layout_gravity="right" />
+                    <Spinner
+                        android:id="@+id/Spinner_Country"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:spinnerMode="dropdown"
+                        android:padding="5dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding5dp"
+                    android:background="@drawable/linear_layout_border"
+                    android:orientation="vertical">
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressBarState"
+                        android:visibility="gone"
+                        android:layout_gravity="right" />
+                    <EditText
+                        android:id="@+id/EditText_searchFilterState"
+                        style="@style/CustomEditTextMatchParent"
+                        android:ems="10"
+                        android:padding="10dp"
+                        android:visibility="gone"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:hint="*Search your state"
+                        android:textColor="@color/Color_Blue"
+                        android:singleLine="true"
+                        android:layout_gravity="center"
+                        android:textColorHint="#BDBDBD"
+                        android:ellipsize="start"/>
+                    <Spinner
+                        android:id="@+id/Spinner_State"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding5dp"
+                    android:background="@drawable/linear_layout_border"
+                    android:orientation="vertical">
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:id="@+id/progressBarCity"
+                        android:layout_gravity="right" />
+                    <EditText
+                        android:id="@+id/EditText_searchFilterCity"
+                        style="@style/CustomEditTextMatchParent"
+                        android:ems="10"
+                        android:padding="10dp"
+                        android:visibility="gone"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:text="*Search your City"
+                        android:editable="false"
+                        android:textColor="@color/Color_Blue"
+                        android:singleLine="true"
+                        android:layout_gravity="center"
+                        android:textColorHint="#BDBDBD"
+                        android:ellipsize="start"/>
+                    <TextView
+                        style="@style/CustomMediumTextViewHeader"
+                        android:paddingLeft="10dp"
+                        android:text="*Select your City"/>
+                    <com.singlagroup.customwidgets.SearchableSpinner
+                        android:id="@+id/spinner_City"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:padding="5dp"
+                        app:hintText="Select your city"/>
+                </LinearLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/pincode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_pincode"
+                        android:imeActionId="@+id/login"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:maxLength="6"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_mobile"
+                        android:imeOptions="actionUnspecified"
+                        android:maxLines="1"
+                        android:maxLength="10"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/LandlineNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_landline"
+                        android:imeOptions="actionUnspecified"
+                        android:maxLines="1"
+                        android:maxLength="15"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/Fax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_fax"
+                        android:imeOptions="actionUnspecified"
+                        android:maxLines="1"
+                        android:maxLength="15"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_email"
+                        android:maxLength="50"
+                        android:imeOptions="actionUnspecified"
+                        android:imeActionLabel="@string/action_sign_up"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/Button_Register"
+                style="@style/CustomButtonMatchParent"
+                android:visibility="gone"
+                android:layout_marginTop="16dp"
+                android:text="Register"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

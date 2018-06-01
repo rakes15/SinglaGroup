@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.singlagroup.HomeAcitvity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutGrid"
+        style="@style/CustomeLinearLayoutVerticalBothMatchParent">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark"
+            app:popupTheme="@style/AppTheme" />
+        <RelativeLayout
+            style="@style/CustomeLinearLayoutVerticalBothMatchParent"
+            android:layout_below="@+id/toolbar">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/Linear"/>
+            <LinearLayout
+                android:id="@+id/Linear"
+                android:layout_alignParentBottom="true"
+                android:padding="@dimen/padding5dp"
+                android:visibility="gone"
+                style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+                <LinearLayout
+                    style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                    android:layout_margin="@dimen/padding2dp">
+                    <Button
+                        android:id="@+id/Button_Add"
+                        style="@style/CustomButtonWrap"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Add"/>
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                    android:layout_margin="@dimen/padding2dp">
+                    <Button
+                        android:id="@+id/Button_Remove"
+                        style="@style/CustomButtonWrap"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Remove"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="@dimen/padding10dp"
+        android:src="@mipmap/home"
+        app:elevation="10dp" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/padding10dp"
+        android:src="@mipmap/back"
+        app:elevation="10dp" />
+</android.support.design.widget.CoordinatorLayout>

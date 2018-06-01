@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/row_active"
+        android:padding="20dp" >
+        <LinearLayout
+            style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:gravity="center_horizontal|center_vertical"
+                android:background="#90a4ae"/>
+            <TextView
+                android:id="@+id/text_Title"
+                style="@style/CustomMediumTextViewHeaderMatchParent"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:textColor="@color/attachment_icon_pdf"
+                android:text="Update Expected Delivery Date and time" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:gravity="center_horizontal|center_vertical"
+                android:background="#90a4ae"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/Linear_ExpectedDelDate"
+            style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+            android:layout_marginTop="@dimen/padding20dp"
+            android:gravity="center_horizontal|center_vertical">
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:gravity="center_horizontal"
+                android:text="Expected Del. Date" />
+            <LinearLayout
+                style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+                android:layout_marginTop="@dimen/padding20dp"
+                android:gravity="center_horizontal|center_vertical">
+                <EditText android:id="@+id/ex_del_date"
+                    style="@style/CustomEditTextBorder"
+                    android:layout_width="@dimen/padding130dp"
+                    android:padding="5dp"
+                    android:drawableRight="@drawable/ic_calander_grey"
+                    android:singleLine="true"/>
+                <EditText android:id="@+id/ex_del_time"
+                    android:layout_width="@dimen/padding100dp"
+                    style="@style/CustomEditTextBorder"
+                    android:padding="5dp"
+                    android:drawableRight="@drawable/ic_timer_grey"
+                    android:singleLine="true"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/Linear_Urgency"
+            style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/padding20dp"
+            android:gravity="center_horizontal|center_vertical">
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:text="Urgency Level" />
+            <Spinner
+                android:id="@+id/spinner_Urgency_Level"
+                style="@style/CustomSpinner"
+                android:padding="@dimen/padding10dp"
+                android:entries="@array/UrgencyLevel"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/Linear_Remarks"
+            style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/padding20dp"
+            android:gravity="center_horizontal|center_vertical">
+            <EditText
+                android:id="@+id/editText_remarks"
+                style="@style/CustomEditTextMatchParentBorder"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:hint="Remarks" />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="@dimen/padding10dp"
+            android:padding="@dimen/padding10dp">
+            <Button
+                android:id="@+id/button_Update"
+                style="@style/CustomButtonWrap"
+                android:layout_margin="@dimen/padding10dp"
+                android:text="Update" />
+            <Button
+                android:id="@+id/button_Cancel"
+                style="@style/CustomButtonWrap"
+                android:layout_margin="@dimen/padding10dp"
+                android:text="Cancel" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

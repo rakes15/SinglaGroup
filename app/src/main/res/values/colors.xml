@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Color_lightGrey">#11111133</color>
+    <color name="colorPrimary">#4699c8</color>
+    <color name="colorPrimaryDark">#2879aa</color>
+    <color name="colorAccent">#3788b7</color>
+    <color name="TextViewContent">#606060</color>
+    <color name="TextColorWhite">#FFFF</color>
+    <color name="TransparentRed">#30f30707</color>
+    <color name="Color_Blue">#000066</color>
+    <color name="Color_Grey">#606060</color>
+    <color name="Color_Maroon">#990033</color>
+    <color name="Color_Green">#1d7b04</color>
+    <color name="Green_70">#701d7b04</color>
+    <color name="Green_60">#601d7b04</color>
+    <color name="TransparentGreen">#301d7b04</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Yellow">#FFFF00</color>
+    <color name="YellowLight">#66FFFF00</color>
+    <color name="Bisque">#FFE4C4</color>
+    <color name="red">#FF0000</color>
+    <color name="AliceBlue">#F0F8FF</color>
+    <color name="BurlyWood">#DEB887</color>
+    <color name="Crimson">#DC143C</color>
+    <color name="Chocolate">#D2691E</color>9999
+    <color name="DarkGray">#A9A9A9</color>
+    <color name="Brown">#a52a2a</color>
+    <color name="BlueViolet">#8A2BE2</color>
+    <color name="Gray">#808080</color>
+    <color name="Purple">#800080</color>
+    <color name="Purple_70">#70800080</color>
+    <color name="Maroon">#800000</color>
+    <color name="Green">#008000</color>
+    <color name="Blue">#0000FF</color>
+    <color name="Orange">#FF8C00</color>
+    <color name="Black">#000000</color>
+
+    <color name="red_10">#10FF0000</color>
+    <color name="red_25">#25FF0000</color>
+    <color name="red_50">#50FF0000</color>
+    <color name="red_75">#75FF0000</color>
+    <color name="red_80">#80FF0000</color>
+
+    <color name="Orange_50">#50FF8C00</color>
+    <color name="Pink">#f442cb</color>
+</resources>

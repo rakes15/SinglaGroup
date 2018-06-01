@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding2dp"
+    android:background="@color/row_active"
+    android:foreground="?attr/selectableItemBackground"
+    android:theme="@style/AppTheme"
+    card_view:cardCornerRadius="@dimen/padding5dp"
+    card_view:contentPadding="@dimen/padding5dp">
+    <LinearLayout
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+            <LinearLayout
+                style="@style/CustomeLinearLayoutVerticalBothWrap">
+                <ImageView
+                    android:layout_width="@dimen/padding150dp"
+                    android:layout_height="@dimen/padding180dp"
+                    android:id="@+id/imageView_Icon"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:src="@mipmap/ic_launcher"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                android:layout_marginTop="@dimen/padding10dp">
+                <LinearLayout
+                    style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+                    android:gravity="center_vertical|center_horizontal">
+                    <TextView
+                        android:id="@+id/textView_Title"
+                        style="@style/CustomSmallTextViewHeaderMatchParent"
+                        android:padding="@dimen/padding10dp"
+                        android:text="File name"/>
+                    <TextView
+                        android:id="@+id/textView_Description"
+                        style="@style/CustomSmallTextViewHeaderMatchParent"
+                        android:padding="@dimen/padding10dp"
+                        android:text="Description"/>
+                    <TextView
+                        android:id="@+id/textView_Add_Description"
+                        style="@style/CustomSmallTextViewHeader"
+                        android:padding="@dimen/padding10dp"
+                        android:background="@color/BurlyWood"
+                        android:text="Add Description"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/textView_Status"
+            style="@style/CustomSmallTextViewHeader"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

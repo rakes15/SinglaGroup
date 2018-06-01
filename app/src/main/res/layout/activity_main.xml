@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CustomeLinearLayoutVerticalBothMatchParent"
+    tools:context="com.singlagroups.com.singlagroup.MainActivity">
+    <ProgressBar
+        android:id="@+id/progressBar_login"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@mipmap/ic_launcher"
+        android:layout_centerInParent="true"/>
+    <ImageView
+        android:id="@+id/imageView_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:id="@+id/textView_message"
+        style="@style/CustomMediumTextViewHeaderMatchParent"
+        android:text="Please wait..."
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="@dimen/padding50dp"
+        android:layout_below="@+id/imageView_logo"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/textView_messagePending"
+        style="@style/CustomMediumTextViewHeader"
+        android:textSize="@dimen/padding15dp"
+        android:text="Your device will be activated in 24hrs or you may be contacted if any further information is required."
+        android:layout_below="@+id/textView_message"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/padding10dp"
+        android:padding="@dimen/padding10dp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/textView_version"
+        style="@style/CustomSmallTextViewContent"
+        android:textColor="@color/Maroon"
+        android:layout_marginBottom="@dimen/padding10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

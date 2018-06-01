@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="@dimen/padding2dp"
+    android:layout_margin="@dimen/padding5dp"
+    android:background="@color/Color_Grey"
+    android:foreground="?attr/selectableItemBackground"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textView_GodownName"
+            style="@style/CustomSmallTextViewContent"
+            android:textColor="@color/Color_Grey"
+            android:textStyle="bold"
+            android:padding="@dimen/padding10dp"
+            android:text="GodownName"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        <TextView
+            android:id="@+id/txtView_Barcodewise_Stock"
+            style="@style/CustomSmallTextViewContent"
+            android:padding="@dimen/padding10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView_GodownName"
+            android:textColor="@color/Color_Maroon"
+            android:text="Stock" />
+        <TextView
+            android:id="@+id/txtView_ColorName"
+            style="@style/CustomSmallTextViewContent"
+            android:padding="@dimen/padding10dp"
+            android:layout_alignBaseline="@+id/txtView_Barcodewise_Stock"
+            android:layout_alignBottom="@+id/txtView_Barcodewise_Stock"
+            android:layout_toLeftOf="@+id/txtView_Barcodewise_Stock"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/Color_Blue"
+            android:text="ColorName" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

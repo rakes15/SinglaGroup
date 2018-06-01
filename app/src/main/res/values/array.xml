@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="UserType">
+        <item >Select User Type</item>
+        <item >Employee</item>
+        <item >Agent</item>
+        <item >Customer</item>
+        <item >Vendor</item>
+        <item >Jobber</item>
+        <item >Transporter</item>
+    </string-array>
+    <string-array name="RequestForApproval">
+        <item >Pending</item>
+        <item >Approved</item>
+        <item >On Hold</item>
+        <item >Rejected</item>
+        <item >Move Back</item>
+    </string-array>
+    <string-array name="AppType">
+        <item >ALL</item>
+        <item >0-FCA</item>
+        <item >1-Singla Groups</item>
+        <item >2-La\'Scoot Android App</item>
+        <item >3-La\'Scoot IOS App</item>
+    </string-array>
+    <string-array name="StockAvl">
+        <item >ALL(YES/NO)</item>
+        <item >YES</item>
+        <item >NO</item>
+    </string-array>
+    <string-array name="FinishType">
+        <item >Finish Item</item>
+        <item >Other Than Finish</item>
+        <item >ALL</item>
+    </string-array>
+    <string-array name="ReportType">
+        <item >Order</item>
+        <item >Dispatch</item>
+        <item >Invoice</item>
+    </string-array>
+    <string-array name="ColorSizeStock">
+        <item >Greater Than</item>
+        <item >Less Than</item>
+    </string-array>
+    <string-array name="StockType">
+        <item >0-In hand Stock</item>
+        <item >1-Saleble Stock</item>
+        <item >2-Reserve Stock</item>
+        <item >3-Rejection/Scrap Stock</item>
+        <item >4-Production/Purchase Stock</item>
+        <item >5-Pending Delivery</item>
+    </string-array>
+    <string-array name="SortDays">
+        <item >Select Days</item>
+        <item >Ageing</item>
+        <item >Last In</item>
+        <item >Last Out</item>
+        <item >Creations Days</item>
+    </string-array>
+    <string-array name="ItemCategory">
+        <item >ALL</item>
+        <item >Finish Item</item>
+        <item >Other Than Finish</item>
+    </string-array>
+    <string-array name="HandOverType">
+        <item >Pending Hand Over</item>
+        <item >Complete Hand Over</item>
+    </string-array>
+    <string-array name="cp_designation">
+        <item >*Select Designation</item>
+    </string-array>
+    <string-array name="country">
+        <item >*Select Country</item>
+    </string-array>
+    <string-array name="state">
+        <item >*Select State</item>
+    </string-array>
+    <string-array name="city">
+        <item >*Select City</item>
+    </string-array>
+    <string-array name="ForceCloseType">
+        <item >Sale Order</item>
+        <item >Purchase Order</item>
+        <item >Production Order</item>
+    </string-array>
+    <string-array name="UrgencyLevel">
+        <item >Select Urgency Level</item>
+        <item >1- Immediate(Most Urgent)</item>
+        <item >2- Urgent</item>
+        <item >3- Medium</item>
+        <item >4- Low</item>
+    </string-array>
+    <string-array name="Division">
+        <item >Select Division</item>
+    </string-array>
+    <string-array name="User">
+        <item >Select User</item>
+    </string-array>
+    <array name="audio_type_sentences">
+        <item>Voice message \(\d{2}:\d{2}\)</item>
+        <item>Гласово съобщение \(\d{2}:\d{2}\)</item>
+        <item>Sprachnachricht \(\d{2}:\d{2}\)</item>
+        <item>Mensaje de voz \(\d{2}:\d{2}\)</item>
+        <item>Message vocal \(\d{2}:\d{2}\)</item>
+        <item>Pesan suara \(\d{2}:\d{2}\)</item>
+        <item>Messaggio vocale \(\d{2}:\d{2}\)</item>
+        <item>Gesproken bericht \(\d{2}:\d{2}\)</item>
+        <item>Mensagem de voz \(\d{2}:\d{2}\)</item>
+        <item>Mesaj vocal \(\d{2}:\d{2}\)</item>
+        <item>Голосовое сообщение \(\d{2}:\d{2}\)</item>
+    </array>
+    <string-array name="CallStatus">
+        <item >0-ALL</item>
+        <item >1-Holiday</item>
+        <item >2-Agent Available and Call Missed</item>
+        <item >3-Agent Available but ext not register</item>
+        <item >4-Call Answered</item>
+        <item >5-Call Missed All Agent Busy</item>
+        <item >6-Agent not Available during office Hour</item>
+        <item >7-Missed Call after office hours</item>
+    </string-array>
+    <string-array name="Agent">
+        <item >Select Agent</item>
+    </string-array>
+    <string-array name="incoming_outgoing">
+        <item >Incoming</item>
+        <item >Outgoing</item>
+    </string-array>
+    <string-array name="cheque_type">
+        <item >Current/Post dated cheque</item>
+        <item >Security Cheque</item>
+        <item >Undated Cheque</item>
+    </string-array>
+</resources>

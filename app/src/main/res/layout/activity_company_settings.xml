@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding5dp"
+            android:background="@drawable/linear_layout_border"
+            android:orientation="vertical">
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:padding="@dimen/padding10dp"
+                android:text="Company : "/>
+            <Spinner
+                android:id="@+id/Spinner_Company"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding5dp"
+            android:background="@drawable/linear_layout_border"
+            android:orientation="vertical">
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:padding="@dimen/padding10dp"
+                android:text="Division :"/>
+            <Spinner
+                android:id="@+id/Spinner_Division"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding5dp"
+            android:background="@drawable/linear_layout_border"
+            android:orientation="vertical">
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:padding="@dimen/padding10dp"
+                android:text="Branch :"/>
+            <Spinner
+                android:id="@+id/Spinner_Branch"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding5dp"
+            android:background="@drawable/linear_layout_border"
+            android:orientation="vertical">
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:padding="@dimen/padding10dp"
+                android:text="Godown :"/>
+            <Spinner
+                android:id="@+id/Spinner_Godown"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:layout_margin="@dimen/padding5dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/Button_Save"
+            style="@style/CustomButtonWrap"
+            android:text="Save"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

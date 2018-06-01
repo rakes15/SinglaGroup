@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_Refresh_Layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/text_showroom"
+            style="@style/CustomSmallTextViewHeaderMatchParent"
+            android:gravity="center_horizontal|center_vertical"
+            android:visibility="gone"
+            android:padding="@dimen/padding10dp"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/padding5dp"
+            android:layout_below="@+id/text_showroom"
+            android:layout_above="@+id/button_book_order"
+            android:gravity="center_horizontal"
+            android:scrollbars="vertical"/>
+        <Button
+            style="@style/CustomButtonMatchParent"
+            android:id="@+id/button_book_order"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/padding5dp"
+            android:visibility="gone"
+            android:text="Book Order"/>
+        <WebView
+            android:id="@+id/web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </WebView>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</android.support.v4.widget.SwipeRefreshLayout>
+

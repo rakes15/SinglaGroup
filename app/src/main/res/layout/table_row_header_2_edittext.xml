@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal|center_vertical">
+    <TextView android:id="@+id/header"
+        android:layout_width="@dimen/padding140dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:layout_column="1"/>
+    <EditText android:id="@+id/ex_del_date"
+        style="@style/CustomEditTextBorder"
+        android:layout_width="@dimen/padding130dp"
+        android:padding="5dp"
+        android:drawableRight="@drawable/ic_calander_grey"
+        android:layout_column="2"
+        android:singleLine="true"/>
+    <EditText android:id="@+id/ex_del_time"
+        android:layout_width="@dimen/padding100dp"
+        style="@style/CustomEditTextBorder"
+        android:padding="5dp"
+        android:drawableRight="@drawable/ic_timer_grey"
+        android:layout_column="3"
+        android:singleLine="true"/>
+</TableRow>

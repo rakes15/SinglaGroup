@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Notification Service"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold"
+        android:textSize="28dp"/>
+
+    <Button
+        android:id="@+id/btnOnOffService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="On/Off" />
+    <Switch
+        android:id="@+id/switch_btn_notif_service"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/padding10dp"
+        android:scaleX="2"
+        android:scaleY="2"/>
+    <TextView
+        android:id="@+id/tvAccessStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Accessibility"
+        android:textStyle="bold"
+        android:textSize="28dp"/>
+
+    <Button
+        android:id="@+id/btnOnOffAccess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="On/Off" />
+    <Switch
+        android:id="@+id/switch_btn_access"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/padding10dp"
+        android:scaleX="2"
+        android:scaleY="2"/>
+
+    <TextView
+        android:id="@+id/tvAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold"
+        android:textSize="28dp"/>
+
+    <Button
+        android:id="@+id/btnAdmin"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="On" />
+
+</LinearLayout>

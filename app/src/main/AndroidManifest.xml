@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.singlagroup">
+    <!-- Uses Permnissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--<uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Uses Features -->
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <!-- Supports Screens -->
+    <supports-screens
+        android:resizeable="true"
+        android:anyDensity="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme"
+        android:name="com.singlagroup.AppController">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        <!-- todo: Receivers -->
+        <receiver android:name="com.singlagroup.otpverification.SmsReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="services.NetworkChangeReceiver"
+            android:label="NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <!--<receiver android:name="services.IncomingBroadcastReceiver"  android:enabled="true" >-->
+        <!--<intent-filter android:priority="100">-->
+        <!--<action android:name="android.intent.action.PHONE_STATE" />-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--<receiver android:name="truecaller.CallRecordReceiver"-->
+        <!--android:enabled="true">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.PHONE_STATE" />-->
+        <!--&lt;!&ndash;<action android:name="android.intent.action.NEW_OUTGOING_CALL"/>&ndash;&gt;-->
+        <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!-- todo: Whats app receivers-->
+        <!-- This is where we register our receiver -->
+        <receiver
+            android:name="whatsapp.autoresponder.Receiver.LockUnLockReciever"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <intent-filter>
+
+                <!-- This action is required -->
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+
+            <!-- This is required this receiver to become device admin component. -->
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/policies" />
+        </receiver>
+        <receiver android:name="whatsapp.autoresponder.Receiver.RepeatReceiver">
+            <intent-filter>
+                <action android:name="paresh.reminder.REPEAT"></action>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="whatsapp.autoresponder.Utils.MyAdmin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/policies" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+        <!-- todo: Services-->
+        <!--<service-->
+        <!--android:name="whatsapp.WhatsAppReadNotification"-->
+        <!--android:label="@string/app_name"-->
+        <!--android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.service.notification.NotificationListenerService" />-->
+        <!--</intent-filter>-->
+        <!--</service>-->
+        <!--<service-->
+        <!--android:name="services.MyFirebaseMessagingService">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.google.firebase.MESSAGING_EVENT"/>-->
+        <!--</intent-filter>-->
+        <!--</service>-->
+        <service
+            android:name="services.SinglaGroupsServices"
+            android:enabled="true"
+            android:exported="true"></service>
+        <!-- todo: Whats app Services-->
+        <service
+            android:name="whatsapp.autoresponder.NotiHandler.NotiListenerService"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+        <service android:name="whatsapp.autoresponder.FCM.ARFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="whatsapp.autoresponder.FCM.ARFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="whatsapp.autoresponder.Service.SchedulerService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/service_config" />
+
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+        </service>
+        <service android:name="whatsapp.autoresponder.Service.BackgroundService" />
+
+        <!-- todo: Root Activities-->
+        <activity
+            android:name="com.singlagroup.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar">
+            <tools:validation testUrl="http://singlaapparels.com/sgapp" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="singlaapparels.com"
+                    android:pathPattern="/sgapp" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.singlagroup.DeviceInfoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.DeviceInfoActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.singlagroup.RegistrationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.RegistrationActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.singlagroup.ConnectionActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.ConnectionActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.singlagroup.otpverification.OTPVerificationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.OTPVerificationActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.singlagroup.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.LoginActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.singlagroup.HomeAcitvity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.HomeAcitvity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.singlagroup.SettingsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SettingsActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.singlagroup.SettingsCompanyActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SettingsCompanyActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.singlagroup.BriefcaseSettingActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.BriefcaseSettingActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.singlagroup.ProfileActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ProfileActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.singlagroup.RecommandedAppsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.RecommandedAppsActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Upload Images and files Activities-->
+        <activity
+            android:name="uploadimagesfiles.ImageUplodingAcitvity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ImageUplodingAcitvity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="uploadimagesfiles.FileImageUplodingAcitvity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.FileImageUplodingAcitvity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="uploadimagesfiles.EmployeeImageUplodingAcitvity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.EmployeeImageUplodingAcitvity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="uploadimagesfiles.voucherdocupload.VoucherDocumentActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VoucherDocumentActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="uploadimagesfiles.voucherdocupload.AttachmentActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.AttachmentActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="uploadimagesfiles.voucherdocupload.VoucherDocumentUploadActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VoucherDocumentUploadActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Document Attachments Activities-->
+        <activity
+            android:name="uploadimagesfiles.documentattachment.DocumentAttachmentActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.DocumentAttachmentActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="uploadimagesfiles.documentattachment.AttachmentActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.AttachmentActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="uploadimagesfiles.documentattachment.DocumentAttachmentUploadActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.DocumentAttachmentUploadActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Stock check Activities-->
+        <activity
+            android:name="stockcheck.StockCheckActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.StockCheckActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="stockcheck.StockCheckGodownWiseActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.StockCheckGodownWiseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="stockcheck.InTransitOrJobberWarehouseReport"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.InTransitOrJobberWarehouseReport" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Catalogue of Order Booking Activities-->
+        <activity
+            android:name="orderbooking.catalogue.CatalogueActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.CatalogueActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.catalogue.ItemListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ItemListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.catalogue.SearchedItemListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SearchedItemListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.catalogue.SlidingImageActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SlidingImageActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.catalogue.wishlist.GroupWishListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GroupWishListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.catalogue.wishlist.WishListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.WishListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.PartyCreateOrUpdateActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.PartyCreateOrUpdateActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Live Streaming Activity-->
+        <activity
+            android:name="livestreaming.LiveStreamingActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.LiveStreamingActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Order Booking Activities-->
+        <activity
+            android:name="orderbooking.customerlist.SelectCustomerForOrderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SelectCustomerForOrderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.SelectCustomerForOrderByNewCustomerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SelectCustomerForOrderByNewCustomerActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.SelectSubCustomerForOrderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SelectSubCustomerForOrderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.BookOrdersActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.BookOrdersActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.CloseOrdersActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.CloseOrderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.ChangePartyActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ChangePartyActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.ChangePartySelectCustomerForOrderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ChangePartySelectCustomerForOrderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.ChangePartySelectSubCustomerForOrderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ChangePartySelectSubCustomerForOrderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.barcode_search.BarcodeSearchViewPagerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.BarcodeSearchViewPagerActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.barcode_search.OrderBookingActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.OrderBookingActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.barcode_search.SubItemActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SubItemActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.barcode_search.WithoutSubItemActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.WithoutSubItemActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.view_order_details.OrderViewOrPushActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.OrderViewOrPushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.view_order_details.OrderViewItemByGroupActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.OrderViewItemByGroupActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.print.PrintReportActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.PrintReportActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.partyinfo.PartyInfoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.PartyInfoActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.partyinfo.PartyInfoSelectCustomerForOrderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.PartyInfoSelectCustomerForOrderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.partyinfo.PartyInfoSelectSubCustomerForOrderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.PartyInfoSelectSubCustomerForOrderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.partyinfo.CommonDetailsListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.CommonDetailsListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.partyinfo.MoreContactInfoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MoreContactInfoActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.AccountInfoSend.AccountInfoSendSelectCustomerForOrderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.AccountInfoSendSelectCustomerForOrderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.AccountInfoSend.AccountInfoSendSelectSubCustomerForOrderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.AccountInfoSendSelectSubCustomerForOrderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.customerlist.SubPartyCreationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SubPartyCreationActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Barcode Scanner Activity -->
+        <activity
+            android:name=".customwidgets.BarcodeScanner"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.BarcodeScanner" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Administration Activities -->
+        <activity
+            android:name="administration.VoucherAuthorizeListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VoucherAuthorizeListActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="administration.RequestForApprovalActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.RequestForApprovalActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="administration.UserWithPermissionActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.UserWithPermissionActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="administration.UserGroupPermissionActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.UserGroupPermissionActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="administration.DeviceRequestActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.DeviceRequestActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="administration.ChequeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ChequeActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Reports Activities-->
+        <activity
+            android:name="report.pendingdispatch.PendingDispatchActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.PendingDispatchWithForceCloseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.pendingdispatch.GroupListByPartyOrOrderWiseActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GroupListByPartyOrOrderWiseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.pendingdispatch.ItemDetailsListByAllWiseActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ItemDetailsListByAllWiseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.pendingdispatch.ItemAllDetailsByItemActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ItemAllDetailsByItemActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.forceclose.ForceCloseActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ForceCloseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.forceclose.ExpectedDelActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ExpectedDelActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.forceclose.GroupListByPartyOrOrderWiseActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GroupListByPartyOrOrderWiseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.forceclose.ItemDetailsListByAllWiseActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ItemDetailsListByAllWiseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.revertforceclose.RevertForceCloseViewPagerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.RevertForceCloseViewPagerActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.itemsrndetails.ItemSRNDetailsViewPagerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ItemSRNDetailsViewPagerActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.godownwiseorderitem.GodownWiseOrderItemActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GodownWiseOrderItemActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.showroomitemcheck.ShowroomItemCheckActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ShowroomItemCheckActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.showroomitemcheck.ItemDetailsListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ItemDetailsListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="report.stockreport.StockReportActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.StockReportActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Print Activities-->
+        <activity
+            android:name="print.godown_group_order_with_rate.FilterOrderListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GodownAndGroupWisePrintFilterActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="print.godown_group_order_with_rate.GodownOrGroupListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GodownOrGroupListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="print.godown_group_order_with_rate.GodownOrGroupListActivity1"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GodownOrGroupListActivity1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="print.godown_group_order_with_rate.PrintActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.PrintActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Catalogue of Order Booking Activities-->
+        <activity
+            android:name="inventory.analysis.catalogue.InventoryAnalysisParentActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.InventoryAnalysisParentActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="inventory.analysis.catalogue.MainGroupOrGroupActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MainGroupOrGroupActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="inventory.analysis.catalogue.SubGroupActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SubGroupActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="inventory.analysis.catalogue.ItemListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ItemListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="inventory.analysis.catalogue.SearchedItemListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SearchedItemListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="inventory.analysis.catalogue.SlidingImageActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SlidingImageActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="inventory.analysis.catalogue.wishlist.GroupWishListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GroupWishListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="inventory.analysis.catalogue.wishlist.WishListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.WishListActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="orderbooking.print.InProductionReportActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.InProductionReportActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="qrcodereader.DecoderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.DecoderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ip2sl.IP2SLActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.IP2SLActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- todo: Whats App Activities-->
+        <activity
+            android:name="whatsapp.DirectlyWhatsAppActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.DirectlyWhatsAppActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="whatsapp.WhatsAppNotificationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.WhatsAppNotificationActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="whatsapp.WhatsAppBackgroundNotificationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.WhatsAppBackgroundNotificationActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="whatsapp.autoresponder.WhatsAppAutoResponderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.WhatsAppAutoResponderActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- todo: Todo Activities-->
+        <activity
+            android:name="todo.ToDoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.ToDoActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="todo.CreateToDoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.CreateToDoActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- todo: Call Center Activities-->
+        <activity
+            android:name="callcenter.AgentLSActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.AgentLSActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="callcenter.CallReportActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.CallReportActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

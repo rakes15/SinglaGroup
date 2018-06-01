@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CustomeLinearLayoutVerticalBothMatchParent"
+    android:background="@color/row_active"
+    android:padding="20dp" >
+    <LinearLayout
+        android:id="@+id/Linear_Top"
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+        <TableLayout
+            android:id="@+id/table_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Linear_whats_app"
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+        <RadioGroup
+            android:id="@+id/RadioGroup_WhatsApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/linear_layout_border"
+            android:layout_margin="@dimen/padding5dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/RadioButton_whatsapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding10dp"
+                android:text="Whats App No"/>
+            <RadioButton
+                android:id="@+id/RadioButton_whatsapp_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding10dp"
+                android:padding="@dimen/padding10dp"
+                android:text="Whats App List"/>
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Linear_middle"
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+        android:layout_marginTop="@dimen/padding10dp">
+        <LinearLayout
+            android:id="@+id/Linear_SMS"
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+            android:gravity="center_vertical">
+            <LinearLayout
+                style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                android:gravity="center_vertical">
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/editTxt_SmsNo"
+                        style="@style/CustomEditTextMatchParent"
+                        android:hint="*Mobile No"
+                        android:singleLine="true"
+                        android:maxLength="10"
+                        android:padding="10dp"
+                        android:gravity="center_vertical"
+                        android:textCursorDrawable="@color/DarkGray"
+                        android:inputType="number"/>
+                    <requestFocus />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Linear_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:gravity="center_vertical">
+                <TextView
+                    style="@style/CustomSmallTextViewContent"
+                    android:text="OR"
+                    android:padding="@dimen/padding10dp"/>
+                <ImageView
+                    android:id="@+id/imageView_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding5dp"
+                    android:src="@drawable/ic_contact_phone_grey"/>
+            </LinearLayout>
+        </LinearLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/editTxt_Email"
+                style="@style/CustomEditTextMatchParent"
+                android:hint="*Email"
+                android:singleLine="true"
+                android:maxLength="50"
+                android:padding="10dp"
+                android:textCursorDrawable="@color/DarkGray"
+                android:inputType="textEmailAddress"/>
+            <requestFocus />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/editTxt_WhatsApp"
+                style="@style/CustomEditTextMatchParent"
+                android:hint="*Whats App No"
+                android:singleLine="true"
+                android:maxLength="10"
+                android:padding="10dp"
+                android:textCursorDrawable="@color/DarkGray"
+                android:inputType="number"/>
+            <requestFocus />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Linear_Bottom"
+        style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+        android:layout_marginTop="@dimen/padding10dp">
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalBothWrap"
+            android:layout_margin="@dimen/padding10dp">
+            <Button
+                android:id="@+id/button_ok"
+                style="@style/CustomButtonWrap"
+                android:text="Send" />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalBothWrap"
+            android:layout_margin="@dimen/padding10dp">
+            <Button
+                android:id="@+id/button_Cancel"
+                style="@style/CustomButtonWrap"
+                android:text="Cancel" />
+        </LinearLayout>
+    </LinearLayout>
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"></WebView>
+</LinearLayout>
+

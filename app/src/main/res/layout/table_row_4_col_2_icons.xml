@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView android:id="@+id/content_column_1"
+        style="@style/CustomSmallTextViewContent"
+        android:padding="5dp"
+        android:textColor="@color/colorAccent"
+        android:layout_margin="@dimen/padding1dp"
+        android:layout_weight="1"
+        android:layout_column="1"
+        android:singleLine="false"/>
+    <TextView android:id="@+id/content_column_2"
+        style="@style/CustomSmallTextViewContent"
+        android:padding="5dp"
+        android:layout_margin="@dimen/padding1dp"
+        android:layout_weight="1"
+        android:layout_column="2"
+        android:singleLine="false"/>
+    <ImageView android:id="@+id/content_column_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_margin="@dimen/padding1dp"
+        android:layout_weight="1"
+        android:layout_column="3"
+        android:src="@drawable/ic_call_grey"/>
+    <ImageView android:id="@+id/content_column_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_margin="@dimen/padding1dp"
+        android:layout_weight="1"
+        android:layout_column="4"
+        android:src="@drawable/ic_whats_app"/>
+</TableRow>

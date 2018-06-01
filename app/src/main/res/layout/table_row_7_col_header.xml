@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal|center_vertical">
+    <TextView
+        android:id="@+id/content1"
+        style="@style/CustomTinySmallTextViewHeader"
+        android:gravity="center_horizontal|center_vertical"
+        android:fontFamily="@font/droidsans_bold"
+        android:layout_column="1"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:singleLine="true"
+        android:text="Phone" />
+    <TextView
+        android:id="@+id/content2"
+        style="@style/CustomTinySmallTextViewHeader"
+        android:gravity="center_horizontal|center_vertical"
+        android:fontFamily="@font/sansation_bold"
+        android:layout_column="2"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:singleLine="true"
+        android:text="Text" />
+    <TextView
+        android:id="@+id/content3"
+        style="@style/CustomTinySmallTextViewHeader"
+        android:gravity="center_horizontal|center_vertical"
+        android:fontFamily="@font/sansation_bold"
+        android:layout_column="3"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:singleLine="true"
+        android:text="Msg Type" />
+    <TextView
+        android:id="@+id/content4"
+        style="@style/CustomTinySmallTextViewHeader"
+        android:gravity="center_horizontal|center_vertical"
+        android:fontFamily="@font/sansation_bold"
+        android:layout_column="4"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:singleLine="true"
+        android:text="Act.Type" />
+    <TextView
+        android:id="@+id/content5"
+        style="@style/CustomTinySmallTextViewHeader"
+        android:gravity="center_horizontal|center_vertical"
+        android:fontFamily="@font/sansation_bold"
+        android:layout_column="5"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:singleLine="true"
+        android:text="Msg Id" />
+    <TextView
+        android:id="@+id/content6"
+        style="@style/CustomTinySmallTextViewHeader"
+        android:gravity="center_horizontal|center_vertical"
+        android:fontFamily="@font/sansation_bold"
+        android:layout_column="6"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:singleLine="true"
+        android:text="Device Id" />
+    <TextView
+        android:id="@+id/content7"
+        style="@style/CustomTinySmallTextViewHeader"
+        android:gravity="center_horizontal|center_vertical"
+        android:fontFamily="@font/sansation_bold"
+        android:layout_column="7"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:singleLine="true"
+        android:text="Url" />
+</TableRow>

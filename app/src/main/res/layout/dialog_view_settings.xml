@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CustomeLinearLayoutVerticalBothMatchParent"
+    android:padding="@dimen/padding20dp"
+    android:gravity="center_horizontal" >
+    <LinearLayout
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+        <TextView
+            style="@style/CustomMediumTextViewHeader"
+            android:padding="@dimen/padding10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="List "/>
+        <RadioGroup
+            android:id="@+id/Radio_Group_ItemOrColorWise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding10dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/padding30dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/Radio_Button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding10dp"
+                android:text="Item Wise"/>
+            <RadioButton
+                android:id="@+id/Radio_Button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding10dp"
+                android:text="Color Wise"/>
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+        <TextView
+            style="@style/CustomMediumTextViewHeader"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="View "
+            android:padding="@dimen/padding10dp"/>
+        <RadioGroup
+            android:id="@+id/Radio_Group_SingleOrMultiWise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding10dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/padding30dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/Radio_Button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding10dp"
+                android:src="@drawable/ic_action_single_view_grey"/>
+            <RadioButton
+                android:id="@+id/Radio_Button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding10dp"
+                android:src="@drawable/ic_action_multi_view_grey"/>
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout
+        style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/padding20dp">
+        <Button
+            android:id="@+id/btn_ok"
+            style="@style/CustomButtonWrap"
+            android:text="OK" />
+    </LinearLayout>
+</LinearLayout>

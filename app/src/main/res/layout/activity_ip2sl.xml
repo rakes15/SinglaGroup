@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/padding20dp">
+    <LinearLayout
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+        android:padding="@dimen/padding10dp"
+        android:layout_centerInParent="true">
+        <LinearLayout
+            style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+            <TextView
+                android:id="@+id/textView_Device_info"
+                style="@style/CustomSmallTextViewHeaderMatchParent"
+                android:padding="@dimen/padding5dp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Automation" />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/editText_ip_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding15dp"
+                android:textSize="15sp">
+                <EditText
+                    style="@style/CustomEditTextMatchParent"
+                    android:singleLine="true"
+                    android:hint="Ip address"/>
+
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/editText_port"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding15dp"
+                android:textSize="15sp">
+                <EditText
+                    style="@style/CustomEditTextMatchParent"
+                    android:singleLine="true"
+                    android:hint="Port"/>
+
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/editText_HexaCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding15dp"
+                android:textSize="15sp">
+                <EditText
+                    style="@style/CustomEditTextMatchParent"
+                    android:singleLine="true"
+                    android:hint="Hexa Code"/>
+
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/editText_AUTO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/padding15dp"
+                android:textSize="15sp">
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search"
+                    android:ems="10" />
+            </android.support.design.widget.TextInputLayout>
+            <com.singlagroup.customwidgets.EditSpinner
+                android:id="@+id/editSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_editor_bkg"
+                android:visibility="gone"
+                android:textColorHint="#aa828282"
+                android:textSize="18dp"
+                android:padding="@dimen/padding10dp"
+                android:hint="search"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+            <LinearLayout
+                style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                android:layout_margin="@dimen/padding5dp">
+                <Button
+                    android:id="@+id/button_connect"
+                    style="@style/CustomButtonWrap"
+                    android:text="Connection" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                android:layout_margin="@dimen/padding5dp">
+                <Button
+                    android:id="@+id/button_submit"
+                    style="@style/CustomButtonWrap"
+                    android:text="Submit" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

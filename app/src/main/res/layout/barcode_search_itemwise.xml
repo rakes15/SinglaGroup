@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+        <EditText
+            android:id="@+id/editText_style_or_barcode"
+            style="@style/CustomEditTextMatchParentBorder"
+            android:ems="10"
+            android:padding="@dimen/padding20dp"
+            android:layout_margin="@dimen/padding20dp"
+            android:hint="Style or Barcode"
+            android:gravity="center_horizontal|center_vertical"
+            android:inputType="textCapCharacters"/>
+        <Button android:id="@+id/scan_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/padding40dp"
+            android:background="@drawable/scan_button"/>
+    </LinearLayout>
+</RelativeLayout>

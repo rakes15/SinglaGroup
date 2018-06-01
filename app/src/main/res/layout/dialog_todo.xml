@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CustomeLinearLayoutVerticalBothMatchParent"
+    android:background="@color/colorPrimaryDark">
+    <RelativeLayout
+        style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding8dp"
+            android:src="@drawable/ic_action_close_grey"
+            android:tint="@color/White"
+            android:layout_alignParentLeft="true"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding8dp"
+            android:src="@drawable/ic_action_add"
+            android:tint="@color/White"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <LinearLayout
+        style="@style/CustomeLinearLayoutVerticalBothMatchParent"
+        android:background="@color/White">
+        <ListView
+            android:id="@+id/list_todo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"/>
+    </LinearLayout>
+</LinearLayout>

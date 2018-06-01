@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        style="@style/CustomSmallTextViewContent"
+        android:padding="@dimen/padding10dp"
+        android:text="Double tap to zoom"
+        android:layout_alignParentTop="true"/>
+    <orderbooking.catalogue.adapter.TouchImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/image"
+        android:src="@drawable/placeholder_new"/>
+</FrameLayout>

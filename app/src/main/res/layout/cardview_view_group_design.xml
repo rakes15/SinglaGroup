@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding5dp"
+    android:layout_margin="@dimen/padding3dp"
+    android:background="@color/Color_Grey"
+    android:foreground="?attr/selectableItemBackground"
+    card_view:cardCornerRadius="@dimen/padding5dp">
+    <RelativeLayout
+        style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            style="@style/CustomeLinearLayoutVerticalBothWrap"
+            android:id="@+id/linearLayout1"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal">
+            <ImageView
+                android:id="@+id/imageView_icon"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/placeholder_new"/>
+            <TextView
+                android:id="@+id/textView_title"
+                style="@style/CustomSmallTextViewHeader"
+                android:text="ANDROID"
+                android:textSize="@dimen/txtSize10"
+                android:layout_marginTop="@dimen/padding10dp"
+                android:layout_marginBottom="@dimen/padding10dp"/>
+            <LinearLayout  style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+                android:gravity="center_horizontal">
+                <LinearLayout  style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:id="@+id/textView_TotalStyle"
+                        style="@style/CustomSmallTextViewHeader"
+                        android:text="style"
+                        android:padding="@dimen/padding5dp"
+                        android:textSize="@dimen/txtSize10"/>
+                </LinearLayout>
+                <LinearLayout  style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:id="@+id/textView_TotalQty"
+                        style="@style/CustomSmallTextViewHeader"
+                        android:text="Qty"
+                        android:padding="@dimen/padding5dp"
+                        android:textSize="@dimen/txtSize"/>
+                </LinearLayout>
+                <LinearLayout  style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:id="@+id/textView_TotalAmt"
+                        style="@style/CustomSmallTextViewHeader"
+                        android:text="Amt"
+                        android:padding="@dimen/padding5dp"
+                        android:textSize="@dimen/txtSize"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout  style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+                <TextView
+                    android:id="@+id/textView_lastbookedDate"
+                    style="@style/CustomSmallTextViewHeaderMatchParent"
+                    android:text="Last Booked Date"
+                    android:paddingLeft="@dimen/padding5dp"
+                    android:textSize="@dimen/txtSize10"/>
+                <TextView
+                    android:id="@+id/textView_lastbookedby"
+                    style="@style/CustomSmallTextViewHeaderMatchParent"
+                    android:text="Last Booked By"
+                    android:padding="@dimen/padding5dp"
+                    android:textSize="@dimen/txtSize10"/>
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView_expected_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/padding15dp"
+            android:paddingBottom="@dimen/padding15dp"
+            android:src="@drawable/ic_datetime_grey"/>
+        <CheckBox
+            android:id="@+id/checkbox_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding5dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

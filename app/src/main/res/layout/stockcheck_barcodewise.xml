@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+	<LinearLayout
+		android:id="@+id/top"
+		style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+		android:padding="@dimen/padding5dp">
+		<LinearLayout
+			style="@style/CustomeLinearLayoutHorizontalBothWrap"
+			android:layout_margin="@dimen/padding3dp">
+			<EditText
+				android:id="@+id/editText_barcode"
+				style="@style/CustomEditTextMatchParentBorder"
+				android:padding="10dp"
+				android:hint="Barcode"
+				android:inputType="textCapCharacters">
+				<requestFocus />
+			</EditText>
+		</LinearLayout>
+		<LinearLayout
+			style="@style/CustomeLinearLayoutHorizontalBothWrap"
+			android:gravity="center_horizontal"
+			android:layout_margin="@dimen/padding3dp">
+			<Button android:id="@+id/scan_button"
+				android:layout_width="wrap_content"
+				android:layout_height="40dp"
+				android:background="@drawable/scan_button"/>
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+		android:layout_below="@+id/top"
+		style="@style/CustomeLinearLayoutVerticalBothMatchParent">
+		<WebView
+			android:id="@+id/web_view"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
+	</LinearLayout>
+</RelativeLayout>

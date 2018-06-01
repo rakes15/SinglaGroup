@@ -1,0 +1,67 @@
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+	android:background="@color/row_active"
+	android:padding="@dimen/padding15dp"
+	android:gravity="center_horizontal">
+	<TextView
+		android:id="@+id/text_Emp_header"
+		style="@style/CustomSmallTextViewHeaderMatchParent"
+		android:padding="10dp"
+		android:layout_marginTop="10dp"
+		android:gravity="center_horizontal"
+		android:text="Employee List" />
+	<RelativeLayout
+		android:id="@+id/RelativeLayout_Spinner"
+		style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+		android:gravity="center_horizontal"
+		android:background="@drawable/edittext_border"
+		android:paddingEnd="10dp">
+		<TextView
+			android:id="@+id/text_view"
+			style="@style/CustomSmallTextViewHeaderMatchParent"
+			android:gravity="start"
+			android:visibility="visible"
+			android:padding="@dimen/padding20dp"
+			android:layout_centerVertical="true"
+			android:text="@string/employee_list" />
+		<com.singlagroup.customwidgets.CommonSearchableSpinner
+			android:id="@+id/spinner_Emp_List"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:padding="@dimen/padding5dp"
+			app:hintText="@string/employee_list"/>
+		<ProgressBar
+			android:id="@+id/ProgressBar"
+			style="?android:attr/progressBarStyleSmall"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:visibility="gone"/>
+	</RelativeLayout>
+	<TextView
+		android:id="@+id/text_hand_over_type_header"
+		style="@style/CustomSmallTextViewHeaderMatchParent"
+		android:padding="10dp"
+		android:layout_marginTop="10dp"
+		android:gravity="center_horizontal"
+		android:text="Remarks" />
+	<LinearLayout
+		style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+		android:layout_marginTop="@dimen/padding10dp"
+		android:gravity="center_horizontal">
+		<EditText
+			android:id="@+id/editText_remarks"
+			style="@style/CustomEditTextMatchParentBorder"
+			android:hint="Remarks"
+			android:padding="@dimen/padding20dp"/>
+	</LinearLayout>
+	<Button
+		android:id="@+id/btn_Upload"
+		style="@style/CustomButtonMatchParent"
+		android:padding="10dp"
+		android:layout_marginTop="@dimen/padding30dp"
+		android:gravity="center_horizontal|center_vertical"
+		android:text="Upload" />
+</LinearLayout>

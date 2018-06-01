@@ -1,0 +1,228 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/red</item>
+        <item name="colorAccent">@color/Crimson</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/red</item>
+        <item name="colorAccent">@color/Crimson</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:titleTextStyle">@style/MyTextTitle</item>
+    </style>
+    <style name="MyTextTitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <!-->TextView Style Wrap Content <-->
+    <style name="CustomTinySmallTextViewHeader" parent="Base.V21.Theme.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/droidsans_bold</item>
+        <item name="android:textSize">@dimen/txtSize12</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <style name="CustomTinySmallTextViewContent" parent="Base.V21.Theme.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/droid_sans</item>
+        <item name="android:textSize">@dimen/txtSize12</item>
+        <item name="android:paddingTop">@dimen/padding5dp</item>
+        <item name="android:paddingBottom">@dimen/padding5dp</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <style name="CustomSmallTextViewHeader" parent="Base.V21.Theme.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <style name="CustomMediumTextViewHeader" parent="Base.TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <style name="CustomLargeTextViewHeader" parent="Base.TextAppearance.AppCompat.Large">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <style name="CustomSmallTextViewContent" parent="Base.V21.Theme.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <!-->TextView Style match parent <-->
+    <style name="CustomSmallTextViewHeaderMatchParent" parent="Base.TextAppearance.AppCompat.Small">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <style name="CustomMediumTextViewHeaderMatchParent" parent="Base.TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+
+    <style name="CustomSmallTextViewContentMatchParent" parent="Base.TextAppearance.AppCompat.Small">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <!-->EditText Style Wrap_content<-->
+    <style name="CustomEditText" parent="Base.V7.Widget.AppCompat.EditText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textCursorDrawable">@drawable/cursor</item>
+        <item name="android:background">@drawable/edittext_border</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <style name="CustomEditTextBorder" parent="Base.V7.Widget.AppCompat.EditText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textCursorDrawable">@drawable/cursor</item>
+        <item name="android:background">@drawable/edittext_border</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <!-->EditText Style Match_Parent<-->
+    <style name="CustomEditTextMatchParent" parent="Base.V7.Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textCursorDrawable">@drawable/cursor</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <!-->EditText Style Match_Parent Border<-->
+    <style name="CustomEditTextMatchParentBorder" parent="Base.V7.Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textCursorDrawable">@drawable/cursor</item>
+        <item name="android:background">@drawable/edittext_border</item>
+        <item name="android:textColor">@color/TextViewContent</item>
+    </style>
+    <!-->EditText Style Wrap_content<-->
+    <style name="CustomButtonWrap" parent="Base.TextAppearance.AppCompat.Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/button_border</item>
+        <item name="android:textColor">@color/TextColorWhite</item>
+    </style>
+    <!-->EditText Style Match_Parent<-->
+    <style name="CustomButtonMatchParent" parent="Base.TextAppearance.AppCompat.Widget.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/button_border</item>
+        <item name="android:textColor">@color/TextColorWhite</item>
+    </style>
+    <!-->LinearLayout Horizontal Style Both Wrap Content<-->
+    <style name="CustomeLinearLayoutHorizontalBothWrap">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <!-->LinearLayout Horizontal Style Both Wrap Content<-->
+    <style name="CustomeLinearLayoutHorizontalBothWrapWithoutWeight">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!-->LinearLayout Horizontal Style Both Match Parent<-->
+    <!-->LinearLayout Horizontal Style Width-Match Parent / Height-Wrap Content <-->
+    <style name="CustomeLinearLayoutHorizontalMatchParentWrapContent">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <!-->LinearLayout Horizontal Style Width-Wrap Content / Height-Match Parent <-->
+    <!-->LinearLayout Vertical Style Both Wrap Content<-->
+    <style name="CustomeLinearLayoutVerticalBothWrap">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <!-->LinearLayout Vertical Style Both Match Parent<-->
+    <style name="CustomeLinearLayoutVerticalBothMatchParent">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <!-->LinearLayout Vertical Style Width-Match Parent / Height-Wrap Content <-->
+    <style name="CustomeLinearLayoutVerticalMatchParentWrapContent">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <!-->LinearLayout Vertical Style Width-Wrap Content / Height-Match Parent <-->
+    <!-->ImageView Style Both-Wrap Content <-->
+    <!-->ImageView Style Both-Match Parent <-->
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_down_dialog</item>
+    </style>
+    <style name="DialogSlideAnim" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+    <!-- Animation for dialog box -->
+    <style name="CustomProgressBarCircle" parent="android:Widget.ProgressBar.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="FullHeightDialog" parent="android:style/Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowSoftInputMode">stateUnchanged</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <!-->Spinner <-->
+    <style name="CustomSpinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/linear_layout_border</item>
+        <item name="android:padding">@dimen/padding10dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="NormalSpinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/padding10dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- SwitchDateTime style is independent, each element is optional-->
+    <!-- Year Precise -->
+    <style name="Theme.SwitchDateTime.DateLabelYear">
+        <item name="android:textSize">58sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

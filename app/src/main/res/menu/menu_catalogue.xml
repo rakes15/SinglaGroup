@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_search"
+        android:title="@string/action_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:icon="@drawable/ic_action_search_white"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_single_view"
+        android:title="@string/title_single_view"
+        android:icon="@drawable/ic_action_single_view_white"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_wishlist"
+        android:title="@string/title_wishlist"
+        android:icon="@drawable/menu_notifiaction_wishlist"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_box"
+        android:title="@string/title_Cart"
+        android:icon="@drawable/menu_notifiaction_cart"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_account"
+        android:title="@string/title_single_view"
+        android:icon="@drawable/ic_action_account_white"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_whatsapp"
+        android:title="@string/title_whatsapp"
+        android:icon="@drawable/ic_action_whatsapp_white"
+        android:visible="false"
+        app:showAsAction="always" />
+</menu>
+

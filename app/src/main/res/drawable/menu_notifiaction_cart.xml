@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_notification_cart"
+        android:gravity="center" >
+        <bitmap
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoMirrored="true"
+            android:src="@drawable/ic_action_cart_white"/>
+    </item>
+    <!-- set a place holder Drawable so android:drawable isn't null -->
+    <item
+        android:id="@+id/ic_badge">
+        <bitmap
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoMirrored="true"
+            android:src="@drawable/ic_action_cart_white"/>
+    </item>
+</layer-list>

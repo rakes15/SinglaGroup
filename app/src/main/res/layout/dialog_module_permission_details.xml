@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CustomeLinearLayoutVerticalBothMatchParent"
+    android:background="@color/White"
+    android:padding="10dp" >
+    <LinearLayout
+        android:id="@+id/Linear"
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+        <TableLayout
+            android:id="@+id/table_Layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableLayout
+                android:id="@+id/table_Layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </HorizontalScrollView>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView_Other_details"
+        style="@style/CustomSmallTextViewContent"
+        android:text="Other details:"
+        android:padding="5dp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:layout_below="@+id/Linear"/>
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button_ok"
+        android:layout_below="@+id/textView_Other_details"/>
+    <Button
+        android:id="@+id/button_ok"
+        style="@style/CustomButtonMatchParent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/padding10dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="OK" />
+</RelativeLayout>
+

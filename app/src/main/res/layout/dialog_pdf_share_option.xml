@@ -1,0 +1,46 @@
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:background="@color/row_active"
+	android:padding="@dimen/padding15dp"
+	android:gravity="center_horizontal">
+	<TextView
+		android:id="@+id/text_Title"
+		style="@style/CustomMediumTextViewHeaderMatchParent"
+		android:padding="10dp"
+		android:gravity="center_horizontal"
+		android:textColor="@color/attachment_icon_pdf"
+		android:text="Share" />
+	<RadioGroup
+		android:id="@+id/RadioGroup_shareOption"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:visibility="visible"
+		android:background="@drawable/linear_layout_border"
+		android:padding="@dimen/padding10dp"
+		android:layout_margin="@dimen/padding5dp"
+		android:orientation="vertical">
+		<RadioButton
+			android:id="@+id/RadioButton_print"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/padding10dp"
+			android:drawableLeft="@drawable/ic_print_grey"
+			android:text="Print"/>
+		<RadioButton
+			android:id="@+id/RadioButton_mail"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/padding10dp"
+			android:drawableLeft="@drawable/ic_mail_grey"
+			android:text="E-mail"/>
+		<RadioButton
+			android:id="@+id/RadioButton_whatsapp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/padding10dp"
+			android:drawableLeft="@drawable/ic_whats_app"
+			android:text="Whats App"/>
+	</RadioGroup>
+</LinearLayout>

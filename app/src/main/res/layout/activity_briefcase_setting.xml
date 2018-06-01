@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding5dp">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/Linear"/>
+    <LinearLayout
+        android:id="@+id/Linear"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/padding5dp"
+        style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalBothWrap"
+            android:layout_margin="@dimen/padding2dp">
+            <Button
+                android:id="@+id/Button_Add"
+                style="@style/CustomButtonWrap"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Add"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalBothWrap"
+            android:layout_margin="@dimen/padding2dp">
+            <Button
+                android:id="@+id/Button_Remove"
+                style="@style/CustomButtonWrap"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Remove"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

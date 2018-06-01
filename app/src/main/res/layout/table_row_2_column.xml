@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView android:id="@+id/content_column_1"
+        style="@style/CustomSmallTextViewContent"
+        android:padding="5dp"
+        android:textColor="@color/BlueViolet"
+        android:layout_weight="1"
+        android:layout_column="1"
+        android:singleLine="false"/>
+    <TextView android:id="@+id/content_column_2"
+        style="@style/CustomSmallTextViewContent"
+        android:padding="5dp"
+        android:textColor="@color/Green"
+        android:layout_weight="1"
+        android:layout_column="2"
+        android:singleLine="false"/>
+</TableRow>

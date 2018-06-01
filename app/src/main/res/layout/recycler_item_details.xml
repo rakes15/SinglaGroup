@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+<LinearLayout
+    android:id="@+id/linearLayout1"
+    android:visibility="gone"
+    style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+    android:padding="@dimen/padding5dp">
+    <LinearLayout style="@style/CustomeLinearLayoutHorizontalBothWrap"
+        android:layout_width="@dimen/nav_header_height">
+        <TextView
+            style="@style/CustomMediumTextViewHeader"
+            android:text="Remarks:-"
+            android:textColor="@color/colorPrimary"/>
+    </LinearLayout>
+    <LinearLayout style="@style/CustomeLinearLayoutHorizontalBothWrap">
+        <TextView
+            style="@style/CustomSmallTextViewContent"
+            android:text="In red showing current  available stock please update your order qty and again place the order."/>
+    </LinearLayout>
+</LinearLayout>
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/recycler_ItemDetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/linearLayout1"/>
+</RelativeLayout>

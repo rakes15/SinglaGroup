@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding5dp"
+    android:background="@color/Color_Grey"
+    android:foreground="?attr/selectableItemBackground"
+    android:theme="@style/AppTheme"
+    card_view:cardCornerRadius="@dimen/padding10dp"
+    card_view:contentPadding="@dimen/padding5dp">
+
+    <LinearLayout
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+        android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/textView_messageTitle"
+            style="@style/CustomMediumTextViewHeader"
+            android:text="@string/error_title"
+            android:textColor="@color/Maroon"
+            android:textStyle="bold"
+            android:padding="@dimen/padding5dp"/>
+            <TextView
+                android:id="@+id/textView_message"
+                style="@style/CustomSmallTextViewContentMatchParent"
+                android:gravity="center_horizontal"
+                android:text="@string/errors"
+                android:padding="@dimen/padding10dp"/>
+        <Button
+            android:id="@+id/Button_OK"
+            style="@style/CustomButtonWrap"
+            android:layout_margin="@dimen/padding10dp"
+            android:text="@string/ok" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

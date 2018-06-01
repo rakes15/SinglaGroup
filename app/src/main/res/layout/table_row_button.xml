@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/Button_View_Report"
+        style="@style/CustomButtonWrap"
+        android:text="View Report"
+        android:layout_margin="@dimen/padding10dp"
+        android:layout_weight="1"
+        android:layout_column="1"/>
+    <Button
+        android:id="@+id/button_ok"
+        style="@style/CustomButtonWrap"
+        android:text="OK"
+        android:layout_margin="@dimen/padding10dp"
+        android:layout_weight="1"
+        android:layout_column="2"/>
+</TableRow>

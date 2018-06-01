@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+        android:gravity="end">
+        <TextView
+            android:id="@+id/textView_Device_info"
+            style="@style/CustomSmallTextViewHeader"
+            android:padding="@dimen/padding5dp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal|center_vertical"
+            android:drawableLeft="@drawable/ic_info_grey"
+            android:text="Device info" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+        android:padding="@dimen/padding10dp"
+        android:layout_centerInParent="true">
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+            <ImageView
+                android:id="@+id/imageView_logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/editText_UserID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding15dp"
+                android:textSize="15sp">
+                <EditText
+                    android:id="@+id/editText_UserName"
+                    style="@style/CustomEditTextMatchParent"
+                    android:singleLine="true"
+                    android:hint="User Name"/>
+
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/editText_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding15dp"
+                android:textSize="15sp">
+
+                <EditText
+                    style="@style/CustomEditTextMatchParent"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:hint="Password"/>
+
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+            <LinearLayout
+                style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                android:gravity="start">
+                <TextView
+                    android:id="@+id/textView_ChangePassword"
+                    style="@style/CustomSmallTextViewHeader"
+                    android:padding="@dimen/padding5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/attachment_icon_pdf"
+                    android:text="Change Password?" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                android:gravity="end">
+                <TextView
+                    android:id="@+id/textView_ForgotPassword"
+                    style="@style/CustomSmallTextViewHeader"
+                    android:padding="@dimen/padding5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/Color_Maroon"
+                    android:text="New User / Forgot Password?" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent">
+            <LinearLayout
+                style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                android:layout_margin="@dimen/padding5dp">
+                <Button
+                    android:id="@+id/button_Login"
+                    style="@style/CustomButtonWrap"
+                    android:text="Login" />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/CustomeLinearLayoutHorizontalBothWrap"
+                android:layout_margin="@dimen/padding5dp">
+                <Button
+                    android:id="@+id/button_Auto_Login"
+                    style="@style/CustomButtonWrap"
+                    android:visibility="gone"
+                    android:text="Auto-Login" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/swipe_Refresh_Layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+    <FrameLayout
+		android:id="@+id/frameLayout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<android.support.v7.widget.RecyclerView
+			android:id="@+id/recycler_view"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_margin="@dimen/padding5dp"
+			android:layout_below="@+id/top">
+		</android.support.v7.widget.RecyclerView>
+		<RelativeLayout
+			android:id="@+id/top"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:layout_marginTop="7dp"
+			android:gravity="center_horizontal">
+			<LinearLayout
+				android:id="@+id/Linear"
+				style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+				android:layout_marginTop="@dimen/padding10dp"
+				android:gravity="center_horizontal|center_vertical">
+				<EditText
+					android:id="@+id/editText_barcode"
+					style="@style/CustomEditTextBorder"
+					android:ems="10"
+					android:maxLines="1"
+					android:padding="@dimen/padding10dp"
+					android:hint="Barcode"
+					android:gravity="center_horizontal|center_vertical"
+					android:inputType="textCapCharacters|textNoSuggestions"/>
+				<requestFocus/>
+				<Button android:id="@+id/scan_button"
+					android:layout_width="wrap_content"
+					android:layout_marginLeft="@dimen/padding5dp"
+					android:layout_height="@dimen/padding40dp"
+					android:layout_toRightOf="@+id/editText_barcode"
+					android:layout_alignParentRight="true"
+					android:background="@drawable/scan_button"/>
+			</LinearLayout>
+		</RelativeLayout>
+	</RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

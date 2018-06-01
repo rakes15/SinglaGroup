@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+    android:background="@color/row_active"
+    android:padding="@dimen/padding30dp" >
+    <EditText
+        android:id="@+id/editTxt_name"
+        style="@style/CustomEditTextMatchParent"
+        android:hint="*Name"
+        android:padding="10dp"
+        android:inputType="textPersonName">
+        <requestFocus />
+    </EditText>
+    <EditText
+        android:id="@+id/editTxt_Remarks"
+        style="@style/CustomEditTextMatchParent"
+        android:layout_below="@+id/editTxt_name"
+        android:hint="Remarks"/>
+    <LinearLayout
+        style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+        android:layout_marginTop="@dimen/padding20dp">
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalBothWrap"
+            android:layout_margin="@dimen/padding10dp">
+            <Button
+                android:id="@+id/button_Approve"
+                style="@style/CustomButtonWrap"
+                android:text="Approve" />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalBothWrap"
+            android:layout_margin="@dimen/padding10dp">
+            <Button
+                android:id="@+id/button_Cancel"
+                style="@style/CustomButtonWrap"
+                android:text="Cancel" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,221 @@
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+	android:background="@color/row_active"
+	android:padding="@dimen/padding8dp"
+	android:gravity="center_horizontal">
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scrollbars="none">
+		<LinearLayout
+			style="@style/CustomeLinearLayoutVerticalBothMatchParent"
+			android:layout_margin="@dimen/padding16dp">
+			<!-- Cheque Type-->
+			<RelativeLayout
+				android:id="@+id/RelativeLayout_cheque_type"
+				android:visibility="visible"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
+				<!--  This is the main content -->
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/padding20dp"
+					android:layout_marginBottom="@dimen/padding10dp"
+					android:padding="@dimen/padding8dp"
+					android:background="@drawable/frame"
+					android:orientation="vertical" >
+					<Spinner
+						android:id="@+id/spinner_cheque_type"
+						style="@style/NormalSpinner"
+						android:layout_margin="@dimen/padding8dp"
+						android:entries="@array/cheque_type"/>
+				</RelativeLayout>
+				<!--  This is the title label -->
+				<TextView
+					style="@style/CustomMediumTextViewHeader"
+					android:background="@color/row_active"
+					android:padding="5dp"
+					android:text="* Cheque Type"
+					android:layout_marginLeft="30dp"
+					android:textColor="@color/colorPrimaryDark" />
+			</RelativeLayout>
+			<!-- Cheque Date-->
+			<RelativeLayout
+				android:id="@+id/RelativeLayout_cheque_date"
+				android:visibility="visible"
+				android:layout_marginTop="@dimen/padding16dp"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
+				<!--  This is the main content -->
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/padding20dp"
+					android:layout_marginBottom="@dimen/padding10dp"
+					android:padding="@dimen/padding8dp"
+					android:background="@drawable/frame"
+					android:orientation="vertical" >
+					<TextView
+						android:id="@+id/text_cheque_date"
+						style="@style/CustomMediumTextViewHeader"
+						android:layout_margin="@dimen/padding10dp"
+						android:text="DD - MM - YYYY"
+						android:gravity="center_vertical|center_horizontal"
+						android:layout_centerInParent="true"
+						android:drawableRight="@drawable/ic_calander_grey"
+						android:drawablePadding="@dimen/padding10dp"/>
+				</RelativeLayout>
+				<!--  This is the title label -->
+				<TextView
+					style="@style/CustomMediumTextViewHeader"
+					android:background="@color/row_active"
+					android:padding="5dp"
+					android:text="* Cheque Date"
+					android:layout_marginLeft="30dp"
+					android:textColor="@color/colorPrimaryDark" />
+			</RelativeLayout>
+			<!-- Present Date-->
+			<RelativeLayout
+				android:id="@+id/RelativeLayout_present_date"
+				android:visibility="visible"
+				android:layout_marginTop="@dimen/padding16dp"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
+				<!--  This is the main content -->
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/padding20dp"
+					android:layout_marginBottom="@dimen/padding10dp"
+					android:padding="@dimen/padding8dp"
+					android:background="@drawable/frame"
+					android:orientation="vertical" >
+					<TextView
+						android:id="@+id/text_present_date"
+						style="@style/CustomMediumTextViewHeader"
+						android:layout_margin="@dimen/padding10dp"
+						android:text="DD - MM - YYYY"
+						android:gravity="center_vertical|center_horizontal"
+						android:layout_centerInParent="true"
+						android:drawableRight="@drawable/ic_calander_grey"
+						android:drawablePadding="@dimen/padding10dp"/>
+				</RelativeLayout>
+				<!--  This is the title label -->
+				<TextView
+					style="@style/CustomMediumTextViewHeader"
+					android:background="@color/row_active"
+					android:padding="5dp"
+					android:text="* Present Date"
+					android:layout_marginLeft="30dp"
+					android:textColor="@color/colorPrimaryDark" />
+			</RelativeLayout>
+			<!-- Current Date-->
+			<RelativeLayout
+				android:id="@+id/RelativeLayout_current_date"
+				android:visibility="visible"
+				android:layout_marginTop="@dimen/padding16dp"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
+				<!--  This is the main content -->
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/padding20dp"
+					android:layout_marginBottom="@dimen/padding10dp"
+					android:padding="@dimen/padding8dp"
+					android:background="@drawable/frame"
+					android:orientation="vertical" >
+					<TextView
+						android:id="@+id/text_current_date"
+						style="@style/CustomMediumTextViewHeader"
+						android:layout_margin="@dimen/padding10dp"
+						android:text="DD - MM - YYYY"
+						android:gravity="center_vertical|center_horizontal"
+						android:layout_centerInParent="true"
+						android:drawableRight="@drawable/ic_calander_grey"
+						android:drawablePadding="@dimen/padding10dp"/>
+				</RelativeLayout>
+				<!--  This is the title label -->
+				<TextView
+					style="@style/CustomMediumTextViewHeader"
+					android:background="@color/row_active"
+					android:padding="5dp"
+					android:text="* Current Date"
+					android:layout_marginLeft="30dp"
+					android:textColor="@color/colorPrimaryDark" />
+			</RelativeLayout>
+			<!-- Attachment-->
+			<RelativeLayout
+				android:id="@+id/RelativeLayout_attachment"
+				android:visibility="visible"
+				android:layout_marginTop="@dimen/padding16dp"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
+				<!--  This is the main content -->
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/padding20dp"
+					android:layout_marginBottom="@dimen/padding10dp"
+					android:padding="@dimen/padding8dp"
+					android:background="@drawable/frame"
+					android:orientation="vertical" >
+					<LinearLayout
+						android:id="@+id/Linear_attachment"
+						style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+						android:gravity="center_horizontal|center_vertical">
+						<android.support.design.widget.TextInputLayout
+							android:id="@+id/editText_file_description"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_below="@+id/text_attach_file"
+							android:layout_margin="@dimen/padding10dp"
+							android:textSize="14sp">
+							<EditText
+								style="@style/CustomEditTextMatchParent"
+								android:inputType="text"
+								android:singleLine="false"
+								android:hint="Description"/>
+						</android.support.design.widget.TextInputLayout>
+						<TextView
+							android:id="@+id/text_attach_file"
+							style="@style/CustomSmallTextViewHeaderMatchParent"
+							android:text="Attach file"
+							android:paddingTop="@dimen/padding10dp"
+							android:drawableLeft="@drawable/ic_action_attachment_png"
+							android:drawablePadding="@dimen/padding10dp"
+							android:layout_margin="@dimen/padding10dp"
+							android:drawableTint="@color/Gray"/>
+						<ImageView
+							android:id="@+id/image_view"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:visibility="gone"
+							android:layout_weight="1"
+							android:cropToPadding="true"
+							android:layout_margin="@dimen/padding10dp"
+							android:background="@drawable/frame"/>
+					</LinearLayout>
+				</RelativeLayout>
+				<!--  This is the title label -->
+				<TextView
+					style="@style/CustomMediumTextViewHeader"
+					android:background="@color/row_active"
+					android:padding="5dp"
+					android:text="* Attachment"
+					android:layout_marginLeft="30dp"
+					android:textColor="@color/colorPrimaryDark" />
+			</RelativeLayout>
+			<!-- Upload-->
+			<Button
+				android:id="@+id/btn_upload"
+				style="@style/CustomButtonMatchParent"
+				android:padding="@dimen/padding10dp"
+				android:layout_marginTop="@dimen/padding16dp"
+				android:gravity="center_horizontal|center_vertical"
+				android:text="Upload" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

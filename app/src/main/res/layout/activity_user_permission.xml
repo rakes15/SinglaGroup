@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/row_active"
+        android:padding="16dp" >
+        <LinearLayout
+            style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+            android:visibility="gone">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:gravity="center_horizontal|center_vertical"
+                android:background="#90a4ae"/>
+            <TextView
+                android:id="@+id/text_Title"
+                style="@style/CustomMediumTextViewHeaderMatchParent"
+                android:padding="10dp"
+                android:gravity="center_horizontal"
+                android:textColor="@color/attachment_icon_pdf"
+                android:text="Update Expected Delivery Date and time" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:gravity="center_horizontal|center_vertical"
+                android:background="#90a4ae"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="*Division" />
+            <Spinner
+                android:id="@+id/Spinner_Division"
+                style="@style/CustomSpinner"
+                android:layout_marginLeft="@dimen/padding10dp"
+                android:layout_marginRight="@dimen/padding10dp"
+                android:padding="@dimen/padding10dp"
+                android:background="@drawable/frame"
+                android:entries="@array/Division"/>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="*User" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding10dp"
+                android:background="@drawable/frame">
+                <ProgressBar
+                    android:id="@+id/progressBarUser"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right" />
+                <TextView
+                    android:id="@+id/text_User"
+                    style="@style/CustomMediumTextViewHeader"
+                    android:layout_marginLeft="@dimen/padding20dp"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/padding10dp"
+                    android:text="Select User"/>
+                <com.singlagroup.customwidgets.CommonSearchableSpinner
+                    android:id="@+id/spinner_User"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/padding10dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <!--  This is the main content -->
+            <RelativeLayout
+                android:layout_width="fill_parent" android:layout_height="fill_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="@dimen/padding16dp"
+                android:background="@drawable/frame"
+                android:orientation="vertical" >
+                <RadioGroup
+                    android:id="@+id/radio_group_access_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_centerInParent="true">
+                    <RadioButton
+                        android:id="@+id/radio_button_default_device"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/padding5dp"
+                        android:text="Default Device Only"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_all_device"
+                        android:layout_width="wrap_content"
+                        android:layout_margin="@dimen/padding5dp"
+                        android:layout_height="wrap_content"
+                        android:text="All Device Only"/>
+                </RadioGroup>
+            </RelativeLayout>
+            <!--  This is the title label -->
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:background="@color/row_active"
+                android:padding="5dp"
+                android:text="Access Login"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/colorPrimaryDark" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <!--  This is the main content -->
+            <RelativeLayout
+                android:layout_width="fill_parent" android:layout_height="fill_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="@dimen/padding16dp"
+                android:background="@drawable/frame"
+                android:orientation="vertical" >
+                <RadioGroup
+                    android:id="@+id/radio_group_multi_session"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_centerInParent="true">
+                    <RadioButton
+                        android:id="@+id/radio_button_ms_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/padding5dp"
+                        android:text="Yes"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_ms_no"
+                        android:layout_width="wrap_content"
+                        android:layout_margin="@dimen/padding5dp"
+                        android:layout_height="wrap_content"
+                        android:text="No"/>
+                </RadioGroup>
+            </RelativeLayout>
+            <!--  This is the title label -->
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:background="@color/row_active"
+                android:padding="5dp"
+                android:text="Multi Session"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/colorPrimaryDark" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <!--  This is the main content -->
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="@dimen/padding16dp"
+                android:background="@drawable/frame"
+                android:orientation="vertical" >
+                <RadioGroup
+                    android:id="@+id/radio_group_internet_access"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_centerInParent="true">
+                    <RadioButton
+                        android:id="@+id/radio_button_ia_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/padding5dp"
+                        android:text="Yes"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_ia_no"
+                        android:layout_width="wrap_content"
+                        android:layout_margin="@dimen/padding5dp"
+                        android:layout_height="wrap_content"
+                        android:text="No"/>
+                </RadioGroup>
+            </RelativeLayout>
+            <!--  This is the title label -->
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:background="@color/row_active"
+                android:padding="5dp"
+                android:text="Internet Access"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/colorPrimaryDark" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <!--  This is the main content -->
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="@dimen/padding16dp"
+                android:background="@drawable/frame"
+                android:orientation="vertical" >
+                <RadioGroup
+                    android:id="@+id/radio_group_snapshot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_centerInParent="true">
+                    <RadioButton
+                        android:id="@+id/radio_button_snapshot_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/padding5dp"
+                        android:text="Yes"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_snapshot_no"
+                        android:layout_width="wrap_content"
+                        android:layout_margin="@dimen/padding5dp"
+                        android:layout_height="wrap_content"
+                        android:text="No"/>
+                </RadioGroup>
+            </RelativeLayout>
+            <!--  This is the title label -->
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:background="@color/row_active"
+                android:padding="5dp"
+                android:text="Snapshot"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/colorPrimaryDark" />
+        </RelativeLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent">
+            <TextView
+                style="@style/CustomMediumTextViewHeader"
+                android:padding="@dimen/padding10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Auto Launch Module" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding10dp"
+                android:background="@drawable/frame">
+                <ProgressBar
+                    android:id="@+id/progressBarModule"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right" />
+                <TextView
+                    android:id="@+id/text_Module"
+                    style="@style/CustomMediumTextViewHeader"
+                    android:layout_marginLeft="@dimen/padding20dp"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/padding10dp"
+                    android:text="Select Auto Launch Module"/>
+                <com.singlagroup.customwidgets.CommonSearchableSpinner
+                    android:id="@+id/Spinner_Auto_launch_module"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/padding10dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/CustomeLinearLayoutHorizontalMatchParentWrapContent"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="@dimen/padding10dp">
+            <Button
+                android:id="@+id/Button_Save"
+                style="@style/CustomButtonWrap"
+                android:layout_margin="@dimen/padding10dp"
+                android:text="Save"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

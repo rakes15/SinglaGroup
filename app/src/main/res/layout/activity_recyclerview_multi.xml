@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/Linear_1"
+        style="@style/CustomeLinearLayoutVerticalMatchParentWrapContent"
+        android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/text_call_summary"
+            style="@style/CustomSmallTextViewHeaderMatchParent"
+            android:text="Call Summary"
+            android:padding="@dimen/padding10dp"
+            android:gravity="center_horizontal|center_vertical"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Linear_2"
+        style="@style/CustomeLinearLayoutVerticalBothMatchParent"
+        android:layout_above="@+id/Linear_1"
+        android:layout_alignParentTop="true">
+        <TextView
+            style="@style/CustomSmallTextViewHeaderMatchParent"
+            android:text="Agent Live Status"
+            android:padding="@dimen/padding10dp"
+            android:visibility="gone"
+            android:gravity="center_horizontal|center_vertical"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminateOnly="true"
+        android:visibility="gone"/>
+</RelativeLayout>
+
