@@ -21,12 +21,12 @@ public class OrderViewGroupDataset implements Serializable {
     private String groupName;
     private String subGroupID;
     private String subGroup;
-    private Integer totalQty;
-    private Integer totalStyle;
-    private Integer totalAmount;
+    private String totalQty;
+    private String totalStyle;
+    private String totalAmount;
     private String lastBookDateTime;
 
-    public OrderViewGroupDataset(String orderID,String mainGroupID,String mainGroup,String groupID,String userName,String fullName,String empCVType, String empCVName, String groupImage, String groupName, String subGroupID, String subGroup, int totalQty, int totalStyle, int totalAmount, String lastBookDateTime) {
+    public OrderViewGroupDataset(String orderID,String mainGroupID,String mainGroup,String groupID,String userName,String fullName,String empCVType, String empCVName, String groupImage, String groupName, String subGroupID, String subGroup, String totalQty, String totalStyle, String totalAmount, String lastBookDateTime) {
         this.orderID = orderID;
         this.mainGroupID = mainGroupID;
         this.mainGroup = mainGroup;
@@ -139,27 +139,27 @@ public class OrderViewGroupDataset implements Serializable {
         this.subGroup = subGroup;
     }
 
-    public Integer getTotalQty() {
+    public String getTotalQty() {
         return totalQty;
     }
 
-    public void setTotalQty(Integer totalQty) {
+    public void setTotalQty(String totalQty) {
         this.totalQty = totalQty;
     }
 
-    public Integer getTotalStyle() {
+    public String getTotalStyle() {
         return totalStyle;
     }
 
-    public void setTotalStyle(Integer totalStyle) {
+    public void setTotalStyle(String totalStyle) {
         this.totalStyle = totalStyle;
     }
 
-    public Integer getTotalAmount() {
+    public String getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(Integer totalAmount) {
+    public void setTotalAmount(String totalAmount) {
         this.totalAmount = totalAmount;
     }
 

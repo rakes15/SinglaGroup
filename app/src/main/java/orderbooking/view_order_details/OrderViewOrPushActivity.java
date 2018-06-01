@@ -58,6 +58,7 @@ import com.singlagroup.AppController;
 import com.singlagroup.BuildConfig;
 import com.singlagroup.LoginActivity;
 import com.singlagroup.R;
+import com.singlagroup.customwidgets.ConditionLibrary;
 import com.singlagroup.customwidgets.DateFormatsMethods;
 import com.singlagroup.customwidgets.FileOpenByIntent;
 import com.singlagroup.customwidgets.ItemClickSupport;
@@ -315,16 +316,17 @@ public class OrderViewOrPushActivity extends AppCompatActivity{
                     String Msg=(jsonObject.getString("msg")==null)?"Server is not responding":jsonObject.getString("msg");
                     List<OrderViewGroupDataset> mapList = new ArrayList<>();
                     if (Status == 1) {
-                        int DetailsLength = 0,TGroupStyle = 0,TGroupQty = 0,TGroupAmt = 0;
+                        int DetailsLength = 0;
+                        double TGroupStyle = 0,TGroupQty = 0,TGroupAmt = 0;
                         JSONArray jsonArrayResult = jsonObject.getJSONArray("Result");
                         for (int z = 0; z<jsonArrayResult.length(); z++) {
                             String OrderID = jsonArrayResult.getJSONObject(z).getString("OrderID");
                             JSONArray jsonArrayDetails = jsonArrayResult.getJSONObject(z).getJSONArray("Details");
                             DetailsLength = jsonArrayDetails.length();
                             for (int i = 0; i<jsonArrayDetails.length(); i++) {
-                                int TotalQty = (jsonArrayDetails.getJSONObject(i).getString("TotalQty") == null || jsonArrayDetails.getJSONObject(i).getString("TotalQty").equals("null") ? 0: jsonArrayDetails.getJSONObject(i).getInt("TotalQty"));
-                                int TotalStyle = (jsonArrayDetails.getJSONObject(i).getString("TotalStyle") == null || jsonArrayDetails.getJSONObject(i).getString("TotalStyle").equals("null") ? 0: jsonArrayDetails.getJSONObject(i).getInt("TotalStyle"));
-                                int TotalAmount = (jsonArrayDetails.getJSONObject(i).getString("TotalAmount") == null || jsonArrayDetails.getJSONObject(i).getString("TotalAmount").equals("null") ? 0: jsonArrayDetails.getJSONObject(i).getInt("TotalAmount"));
+                                double TotalStyle = (jsonArrayDetails.getJSONObject(i).optString("TotalStyle") == null ? 0: jsonArrayDetails.getJSONObject(i).optDouble("TotalStyle"));
+                                double TotalQty = (jsonArrayDetails.getJSONObject(i).optString("TotalQty") == null ? 0: jsonArrayDetails.getJSONObject(i).optDouble("TotalQty"));
+                                double TotalAmount = (jsonArrayDetails.getJSONObject(i).optString("TotalAmount") == null ? 0 : jsonArrayDetails.getJSONObject(i).optDouble("TotalAmount"));
                                 TGroupStyle+= TotalStyle;
                                 TGroupQty+= TotalQty;
                                 TGroupAmt+= TotalAmount;
@@ -340,20 +342,20 @@ public class OrderViewOrPushActivity extends AppCompatActivity{
                                         jsonArrayDetails.getJSONObject(i).getString("GroupName"),
                                         jsonArrayDetails.getJSONObject(i).getString("SubGroupID"),
                                         jsonArrayDetails.getJSONObject(i).getString("SubGroup"),
-                                        TotalQty,
-                                        TotalStyle,
-                                        TotalAmount,
+                                        ConditionLibrary.ConvertDoubleToString(TotalQty),
+                                        ConditionLibrary.ConvertDoubleToString(TotalStyle),
+                                        ConditionLibrary.ConvertDoubleToString(TotalAmount),
                                         jsonArrayDetails.getJSONObject(i).getString("LastBookDateTime")
                                 ));
                             }
                         }
                         LoadRecyclerView(mapList);
                         txtTotalGroupHeader.setVisibility(View.VISIBLE);
-                        txtTotalGroupHeader.setText("TotalStyle: "+TGroupStyle+"   TotalQty: "+TGroupQty+"   TotalAmt: "+TGroupAmt);
+                        txtTotalGroupHeader.setText("TotalStyle: "+ConditionLibrary.ConvertDoubleToString(TGroupStyle)+"   TotalQty: "+ConditionLibrary.ConvertDoubleToString(TGroupQty)+"   TotalAmt: "+ConditionLibrary.ConvertDoubleToString(TGroupAmt));
                         if (DetailsLength == 0){
                             MessageDialog.MessageDialog(context,"","No item in cart");
                             txtTotalGroupHeader.setVisibility(View.GONE);
-                            txtTotalGroupHeader.setText("TotalStyle: "+TGroupStyle+"   TotalQty: "+TGroupQty+"   TotalAmt: "+TGroupAmt);
+                            txtTotalGroupHeader.setText("TotalStyle: "+ConditionLibrary.ConvertDoubleToString(TGroupStyle)+"   TotalQty: "+ConditionLibrary.ConvertDoubleToString(TGroupQty)+"   TotalAmt: "+ConditionLibrary.ConvertDoubleToString(TGroupAmt));
                         }
                     } else {
                         MessageDialog.MessageDialog(context,"",Msg);
