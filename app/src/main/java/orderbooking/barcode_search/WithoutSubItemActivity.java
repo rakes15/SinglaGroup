@@ -443,15 +443,15 @@ public class WithoutSubItemActivity extends AppCompatActivity{
                                     //System.out.println("OrderID:" + OrderID + "\nSubItemID:" + SubItemID + "\nExDelDate:" + ExDelDate + "\nQty:" + s);
                                     String edt=editText[Xs][Ys].getText().toString().trim();
                                     edt=(edt.equals(""))?"0":edt;
-                                    double cal = (Double.valueOf(Stock) + Double.valueOf(ReserveStock)) - Double.valueOf(edt);
-                                    if ((cal < 0) && (Double.valueOf(edt) > 0)){
-                                        int AdvCond = DBHandler.AdavanceBookingConditionItemOnly(OrderID, ItemID, edt, Xs);
-                                        if (AdvCond != 1) {
-                                            AlertDialogForStockCheck(OrderID, ItemID, edt, ExDelDatetime, Xs, Ys,Remarks);
-                                        }
-                                    }else {
+//                                    double cal = (Double.valueOf(Stock) + Double.valueOf(ReserveStock)) - Double.valueOf(edt);
+//                                    if ((cal < 0) && (Double.valueOf(edt) > 0)){
+//                                        int AdvCond = DBHandler.AdavanceBookingConditionItemOnly(OrderID, ItemID, edt, Xs);
+//                                        if (AdvCond != 1) {
+//                                            AlertDialogForStockCheck(OrderID, ItemID, edt, ExDelDatetime, Xs, Ys,Remarks);
+//                                        }
+//                                    }else {
                                         DBHandler.updateWithoutSubItemQty(OrderID, ItemID,edt,ExDelDatetime,Xs,Remarks);
-                                    }
+//                                    }
                                     //DBHandler.updateWithoutSubItemQty(OrderID, ItemID,edt,ExDelDatetime,Xs,Remarks);
                                 }
                             });
@@ -1041,22 +1041,31 @@ public class WithoutSubItemActivity extends AppCompatActivity{
                             MessageDialog.MessageDialog(context,"",""+Msg);
                         }
                     } else {
-                        JSONObject jsonObjectStock = jsonObject.getJSONObject("Result");
-                        String Stock = (jsonObjectStock.optString("Stock")==null ? "-00000" : jsonObjectStock.optString("Stock"));
-                        if (!Stock.equals("-00000")) {
-                            Map<String, String> map = new HashMap<>();
-                            map.put("OrderID", OrderID);
-                            map.put("ItemID", ItemID);
-                            map.put("ExpectedDate", ExpectedDate);
-                            map.put("Stock", Stock);
-                            map.put("BookQty", BookQty);
-                            map.put("Remarks", Remarks);
-                            OutOfStock.add(map);
-                            if (!OutOfStock.isEmpty() && DBHandler.getAllOrderWithoutSubItemDetails().size() == (i + 1)) {
-                                MessageDialog.MessageDialog(context, "", "" + Msg);
-                            }
-                        }else {
+                        Object objResult = jsonObject.get("Result");
+                        if (objResult instanceof JSONArray) {
+                            // It's an array
+                            //JSONArray jsonArray = (JSONArray)objResult;
                             MessageDialog.MessageDialog(context,"",""+Msg);
+                        }else if (objResult instanceof JSONObject) {
+                            // It's an object
+                            //interventionObject = (JSONObject)objResult;
+                            JSONObject jsonObjectStock = (JSONObject)objResult;
+                            String Stock = (jsonObjectStock.optString("Stock")==null ? "-00000" : jsonObjectStock.optString("Stock"));
+                            if (!Stock.equals("-00000")) {
+                                Map<String, String> map = new HashMap<>();
+                                map.put("OrderID", OrderID);
+                                map.put("ItemID", ItemID);
+                                map.put("ExpectedDate", ExpectedDate);
+                                map.put("Stock", Stock);
+                                map.put("BookQty", BookQty);
+                                map.put("Remarks", Remarks);
+                                OutOfStock.add(map);
+                                if (!OutOfStock.isEmpty() && DBHandler.getAllOrderWithoutSubItemDetails().size() == (i + 1)) {
+                                    MessageDialog.MessageDialog(context, "", "" + Msg);
+                                }
+                            }else {
+                                MessageDialog.MessageDialog(context,"",""+Msg);
+                            }
                         }
                     }
                 }catch (Exception e){

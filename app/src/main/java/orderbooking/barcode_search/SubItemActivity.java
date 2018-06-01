@@ -59,6 +59,7 @@ import com.singlagroup.customwidgets.DateFormatsMethods;
 import com.singlagroup.customwidgets.MessageDialog;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
@@ -443,15 +444,15 @@ public class SubItemActivity extends AppCompatActivity{
                                     //System.out.println("OrderID:" + OrderID + "\nSubItemID:" + SubItemID + "\nExDelDate:" + ExDelDate + "\nQty:" + s);
                                     String edt=editText[Xs][Ys].getText().toString().trim();
                                     edt=(edt.equals(""))?"0":edt;
-                                    double cal = (Double.valueOf(Stock) + Double.valueOf(ReserveStock)) - Double.valueOf(edt);
-                                    if ((cal < 0) && (Double.valueOf(edt) > 0)){
-                                        int AdvCond = DBHandler.AdavanceBookingConditionSubItem(OrderID, ItemID, SubItemID, edt, Xs);
-                                        if (AdvCond != 1) {
-                                            AlertDialogForStockCheck(OrderID, ItemID, SubItemID, edt, ExDelDatetime, Xs, Ys,Remarks);
-                                        }
-                                    }else {
+//                                    double cal = (Double.valueOf(Stock) + Double.valueOf(ReserveStock)) - Double.valueOf(edt);
+//                                    if ((cal < 0) && (Double.valueOf(edt) > 0)){
+//                                        int AdvCond = DBHandler.AdavanceBookingConditionSubItem(OrderID, ItemID, SubItemID, edt, Xs);
+//                                        if (AdvCond != 1) {
+//                                            AlertDialogForStockCheck(OrderID, ItemID, SubItemID, edt, ExDelDatetime, Xs, Ys,Remarks);
+//                                        }
+//                                    }else {
                                         DBHandler.updateSubItemQty(OrderID, ItemID,SubItemID,edt,ExDelDatetime,Xs,Remarks);
-                                    }
+//                                    }
                                 }
                             });
                         } else {
@@ -948,7 +949,7 @@ public class SubItemActivity extends AppCompatActivity{
                                 if (str != null) {
                                     OutOfStock = new ArrayList<>();
                                     for (int i = 0; i < DBHandler.getAllOrderSubItemDetails().size(); i++) {
-                                        CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getAllOrderSubItemDetails().get(i).get("OrderID"), DBHandler.getAllOrderSubItemDetails().get(i).get("ItemID"), DBHandler.getAllOrderSubItemDetails().get(i).get("ItemCode"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemID"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemName"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemCode"), DBHandler.getAllOrderSubItemDetails().get(i).get("ExpectedDate"), "1", DBHandler.getAllOrderSubItemDetails().get(i).get("BookQty"), DBHandler.getAllOrderSubItemDetails().get(i).get("Rate"), DBHandler.getAllOrderSubItemDetails().get(i).get("DiscountRate"), DBHandler.getAllOrderSubItemDetails().get(i).get("DisPercentage"), DBHandler.getAllOrderSubItemDetails().get(i).get("Remarks"), DBHandler.getAllOrderSubItemDetails().size(), i);
+                                        CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getAllOrderSubItemDetails().get(i).get("OrderID"), DBHandler.getAllOrderSubItemDetails().get(i).get("ItemID"), DBHandler.getAllOrderSubItemDetails().get(i).get("ItemCode"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemID"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemName"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemCode"), DBHandler.getAllOrderSubItemDetails().get(i).get("ExpectedDate"), "1", DBHandler.getAllOrderSubItemDetails().get(i).get("BookQty"), DBHandler.getAllOrderSubItemDetails().get(i).get("Rate"), DBHandler.getAllOrderSubItemDetails().get(i).get("Mrp"), DBHandler.getAllOrderSubItemDetails().get(i).get("DiscountRate"), DBHandler.getAllOrderSubItemDetails().get(i).get("DisPercentage"), DBHandler.getAllOrderSubItemDetails().get(i).get("Remarks"), DBHandler.getAllOrderSubItemDetails().size(), i);
                                         //final String OrderID,final String ItemID,final String ColorID,final String SizeID,final String ExpectedDate,final String BookFrom,final String BookQty,final String Remarks
                                     }
                                 }
@@ -971,7 +972,7 @@ public class SubItemActivity extends AppCompatActivity{
                                 if (str != null) {
                                     OutOfStock = new ArrayList<>();
                                     for (int i = 0; i < DBHandler.getAllOrderSubItemDetails().size(); i++) {
-                                        CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getAllOrderSubItemDetails().get(i).get("OrderID"), DBHandler.getAllOrderSubItemDetails().get(i).get("ItemID"), DBHandler.getAllOrderSubItemDetails().get(i).get("ItemCode"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemID"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemName"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemCode"), DBHandler.getAllOrderSubItemDetails().get(i).get("ExpectedDate"), "1", DBHandler.getAllOrderSubItemDetails().get(i).get("BookQty"), DBHandler.getAllOrderSubItemDetails().get(i).get("Rate"), DBHandler.getAllOrderSubItemDetails().get(i).get("DiscountRate"), DBHandler.getAllOrderSubItemDetails().get(i).get("DisPercentage"), DBHandler.getAllOrderSubItemDetails().get(i).get("Remarks"), DBHandler.getAllOrderSubItemDetails().size(), i);
+                                        CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getAllOrderSubItemDetails().get(i).get("OrderID"), DBHandler.getAllOrderSubItemDetails().get(i).get("ItemID"), DBHandler.getAllOrderSubItemDetails().get(i).get("ItemCode"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemID"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemName"), DBHandler.getAllOrderSubItemDetails().get(i).get("SubItemCode"), DBHandler.getAllOrderSubItemDetails().get(i).get("ExpectedDate"), "1", DBHandler.getAllOrderSubItemDetails().get(i).get("BookQty"), DBHandler.getAllOrderSubItemDetails().get(i).get("Rate"), DBHandler.getAllOrderSubItemDetails().get(i).get("Mrp"), DBHandler.getAllOrderSubItemDetails().get(i).get("DiscountRate"), DBHandler.getAllOrderSubItemDetails().get(i).get("DisPercentage"), DBHandler.getAllOrderSubItemDetails().get(i).get("Remarks"), DBHandler.getAllOrderSubItemDetails().size(), i);
                                         //final String OrderID,final String ItemID,final String ColorID,final String SizeID,final String ExpectedDate,final String BookFrom,final String BookQty,final String Remarks
                                     }
                                 }
@@ -998,7 +999,7 @@ public class SubItemActivity extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
     //TODO: Call Volley Order Update to server
-    private void CallVolleyUpdateBookedOrderToServer(final String DeviceID, final String UserID,final String SessionID,final String DivisionID,final String CompanyID,final String BranchID,final String OrderID,final String ItemID,final String ItemCode,final String SubItemID,final String SubItemName,final String SubItemCode,final String ExpectedDate,final String BookFrom,final String BookQty,final String Rate, final String DiscountRate, final String DisPercentage,final String Remarks,final int size,final int i){
+    private void CallVolleyUpdateBookedOrderToServer(final String DeviceID, final String UserID,final String SessionID,final String DivisionID,final String CompanyID,final String BranchID,final String OrderID,final String ItemID,final String ItemCode,final String SubItemID,final String SubItemName,final String SubItemCode,final String ExpectedDate,final String BookFrom,final String BookQty,final String Rate,final String Mrp, final String DiscountRate, final String DisPercentage,final String Remarks,final int size,final int i){
         showpDialog();
         String PartialUrl = "";
         if (StaticValues.AdvanceOrBookOrder == 0){
@@ -1024,29 +1025,39 @@ public class SubItemActivity extends AppCompatActivity{
                             MessageDialog.MessageDialog(context,"",""+Msg);
                         }
                     } else {
-                        JSONObject jsonObjectStock = jsonObject.getJSONObject("Result");
-                        String Stock = (jsonObjectStock.optString("Stock")==null ? "-00000" : jsonObjectStock.optString("Stock"));
-                        if (!Stock.equals("-00000")) {
-                            Map<String, String> map = new HashMap<>();
-                            map.put("OrderID", OrderID);
-                            map.put("ItemID", ItemID);
-                            map.put("ItemCode", ItemCode);
-                            map.put("SubItemID", SubItemID);
-                            map.put("SubItemName", SubItemName);
-                            map.put("SubItemCode", SubItemCode);
-                            map.put("ExpectedDate", ExpectedDate);
-                            map.put("Stock", Stock);
-                            map.put("BookQty", BookQty);
-                            map.put("Rate", Rate);
-                            map.put("DiscountRate", DiscountRate);
-                            map.put("DisPercentage", DisPercentage);
-                            map.put("Remarks", Remarks);
-                            OutOfStock.add(map);
-                            if (!OutOfStock.isEmpty() && size == (i + 1)) {
-                                DialogInsertToServer(context, OutOfStock);
-                            }
-                        }else {
+                        Object objResult = jsonObject.get("Result");
+                        if (objResult instanceof JSONArray) {
+                            // It's an array
+                            //JSONArray jsonArray = (JSONArray)objResult;
                             MessageDialog.MessageDialog(context,"",""+Msg);
+                        }else if (objResult instanceof JSONObject) {
+                            // It's an object
+                            //interventionObject = (JSONObject)objResult;
+                            JSONObject jsonObjectStock = (JSONObject) objResult;
+                            String Stock = (jsonObjectStock.optString("Stock") == null ? "-00000" : jsonObjectStock.optString("Stock"));
+                            if (!Stock.equals("-00000")) {
+                                Map<String, String> map = new HashMap<>();
+                                map.put("OrderID", OrderID);
+                                map.put("ItemID", ItemID);
+                                map.put("ItemCode", ItemCode);
+                                map.put("SubItemID", SubItemID);
+                                map.put("SubItemName", SubItemName);
+                                map.put("SubItemCode", SubItemCode);
+                                map.put("ExpectedDate", ExpectedDate);
+                                map.put("Stock", Stock);
+                                map.put("BookQty", BookQty);
+                                map.put("Rate", Rate);
+                                map.put("Mrp", Mrp);
+                                map.put("DiscountRate", DiscountRate);
+                                map.put("DisPercentage", DisPercentage);
+                                map.put("Remarks", Remarks);
+                                OutOfStock.add(map);
+                                if (!OutOfStock.isEmpty() && size == (i + 1)) {
+                                    DialogInsertToServer(context, OutOfStock);
+                                }
+                            } else {
+                                MessageDialog.MessageDialog(context, "", "" + Msg);
+                            }
                         }
                     }
                 }catch (Exception e){
@@ -1169,7 +1180,7 @@ public class SubItemActivity extends AppCompatActivity{
                             OutOfStock = new ArrayList<Map<String, String>>();
                             String BookFrom = (StaticValues.ColorWise == 1 ? "2" : "1");
                             for(int i = 0; i < DBHandler.getOutOfStockSubItemDetails().size(); i++){
-                                CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getOutOfStockSubItemDetails().get(i).get("OrderID"), DBHandler.getOutOfStockSubItemDetails().get(i).get("ItemID"), DBHandler.getOutOfStockSubItemDetails().get(i).get("ItemCode"), DBHandler.getOutOfStockSubItemDetails().get(i).get("SubItemID"), DBHandler.getOutOfStockSubItemDetails().get(i).get("SubItemName"),DBHandler.getOutOfStockSubItemDetails().get(i).get("SubItemCode"), DBHandler.getOutOfStockSubItemDetails().get(i).get("ExpectedDate"), BookFrom, DBHandler.getOutOfStockSubItemDetails().get(i).get("BookQty"), DBHandler.getOutOfStockSubItemDetails().get(i).get("Rate"), DBHandler.getOutOfStockSubItemDetails().get(i).get("DiscountRate"), DBHandler.getOutOfStockSubItemDetails().get(i).get("DisPercentage"), DBHandler.getOutOfStockSubItemDetails().get(i).get("Remarks"),DBHandler.getOutOfStockSubItemDetails().size(),i);
+                                CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getOutOfStockSubItemDetails().get(i).get("OrderID"), DBHandler.getOutOfStockSubItemDetails().get(i).get("ItemID"), DBHandler.getOutOfStockSubItemDetails().get(i).get("ItemCode"), DBHandler.getOutOfStockSubItemDetails().get(i).get("SubItemID"), DBHandler.getOutOfStockSubItemDetails().get(i).get("SubItemName"),DBHandler.getOutOfStockSubItemDetails().get(i).get("SubItemCode"), DBHandler.getOutOfStockSubItemDetails().get(i).get("ExpectedDate"), BookFrom, DBHandler.getOutOfStockSubItemDetails().get(i).get("BookQty"), DBHandler.getOutOfStockSubItemDetails().get(i).get("Rate"), DBHandler.getOutOfStockSubItemDetails().get(i).get("Mrp"), DBHandler.getOutOfStockSubItemDetails().get(i).get("DiscountRate"), DBHandler.getOutOfStockSubItemDetails().get(i).get("DisPercentage"), DBHandler.getOutOfStockSubItemDetails().get(i).get("Remarks"),DBHandler.getOutOfStockSubItemDetails().size(),i);
                             }
                         }
                     } else {

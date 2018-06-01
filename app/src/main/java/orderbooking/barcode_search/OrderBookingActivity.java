@@ -65,6 +65,8 @@ import com.singlagroup.R;
 import com.singlagroup.customwidgets.DateFormatsMethods;
 import com.singlagroup.customwidgets.MessageDialog;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
 import org.json.JSONObject;
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -1651,7 +1653,7 @@ public class OrderBookingActivity extends AppCompatActivity implements TabListen
                                     OutOfStock = new ArrayList<>();
                                     String BookFrom = (StaticValues.ColorWise == 1 ? "2" : "1");
                                     for (i = 0; i < DBHandler.getAllOrderDetails().size(); i++) {
-                                        CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getAllOrderDetails().get(i).get("OrderID"), DBHandler.getAllOrderDetails().get(i).get("ItemID"), DBHandler.getAllOrderDetails().get(i).get("ItemCode"), DBHandler.getAllOrderDetails().get(i).get("ColorID"), DBHandler.getAllOrderDetails().get(i).get("ColorName"), DBHandler.getAllOrderDetails().get(i).get("SizeID"), DBHandler.getAllOrderDetails().get(i).get("SizeName"), DBHandler.getAllOrderDetails().get(i).get("ExpectedDate"), BookFrom, DBHandler.getAllOrderDetails().get(i).get("BookQty"), DBHandler.getAllOrderDetails().get(i).get("Rate"), DBHandler.getAllOrderDetails().get(i).get("DiscountRate"), DBHandler.getAllOrderDetails().get(i).get("DisPercentage"), DBHandler.getAllOrderDetails().get(i).get("Remarks"), DBHandler.getAllOrderDetails().size(), i);
+                                        CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getAllOrderDetails().get(i).get("OrderID"), DBHandler.getAllOrderDetails().get(i).get("ItemID"), DBHandler.getAllOrderDetails().get(i).get("ItemCode"), DBHandler.getAllOrderDetails().get(i).get("ColorID"), DBHandler.getAllOrderDetails().get(i).get("ColorName"), DBHandler.getAllOrderDetails().get(i).get("SizeID"), DBHandler.getAllOrderDetails().get(i).get("SizeName"), DBHandler.getAllOrderDetails().get(i).get("ExpectedDate"), BookFrom, DBHandler.getAllOrderDetails().get(i).get("BookQty"), DBHandler.getAllOrderDetails().get(i).get("Rate"), DBHandler.getAllOrderDetails().get(i).get("Mrp"), DBHandler.getAllOrderDetails().get(i).get("DiscountRate"), DBHandler.getAllOrderDetails().get(i).get("DisPercentage"), DBHandler.getAllOrderDetails().get(i).get("Remarks"), DBHandler.getAllOrderDetails().size(), i);
                                     }
                                 }
                             } else {
@@ -1675,7 +1677,7 @@ public class OrderBookingActivity extends AppCompatActivity implements TabListen
                                     OutOfStock = new ArrayList<>();
                                     String BookFrom = (StaticValues.ColorWise == 1 ? "2" : "1");
                                     for (i = 0; i < DBHandler.getAllOrderDetails().size(); i++) {
-                                        CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getAllOrderDetails().get(i).get("OrderID"), DBHandler.getAllOrderDetails().get(i).get("ItemID"), DBHandler.getAllOrderDetails().get(i).get("ItemCode"), DBHandler.getAllOrderDetails().get(i).get("ColorID"), DBHandler.getAllOrderDetails().get(i).get("ColorName"), DBHandler.getAllOrderDetails().get(i).get("SizeID"), DBHandler.getAllOrderDetails().get(i).get("SizeName"), DBHandler.getAllOrderDetails().get(i).get("ExpectedDate"), BookFrom, DBHandler.getAllOrderDetails().get(i).get("BookQty"), DBHandler.getAllOrderDetails().get(i).get("Rate"), DBHandler.getAllOrderDetails().get(i).get("DiscountRate"), DBHandler.getAllOrderDetails().get(i).get("DisPercentage"), DBHandler.getAllOrderDetails().get(i).get("Remarks"), DBHandler.getAllOrderDetails().size(), i);
+                                        CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getAllOrderDetails().get(i).get("OrderID"), DBHandler.getAllOrderDetails().get(i).get("ItemID"), DBHandler.getAllOrderDetails().get(i).get("ItemCode"), DBHandler.getAllOrderDetails().get(i).get("ColorID"), DBHandler.getAllOrderDetails().get(i).get("ColorName"), DBHandler.getAllOrderDetails().get(i).get("SizeID"), DBHandler.getAllOrderDetails().get(i).get("SizeName"), DBHandler.getAllOrderDetails().get(i).get("ExpectedDate"), BookFrom, DBHandler.getAllOrderDetails().get(i).get("BookQty"), DBHandler.getAllOrderDetails().get(i).get("Rate"), DBHandler.getAllOrderDetails().get(i).get("Mrp"), DBHandler.getAllOrderDetails().get(i).get("DiscountRate"), DBHandler.getAllOrderDetails().get(i).get("DisPercentage"), DBHandler.getAllOrderDetails().get(i).get("Remarks"), DBHandler.getAllOrderDetails().size(), i);
                                     }
                                 }
                             } else {
@@ -1720,7 +1722,7 @@ public class OrderBookingActivity extends AppCompatActivity implements TabListen
         return super.onOptionsItemSelected(item);
     }
     //TODO: Call Volley Order Update to server
-    private void CallVolleyUpdateBookedOrderToServer(final String DeviceID, final String UserID, final String SessionID, final String DivisionID, final String CompanyID, final String BranchID, final String OrderID, final String ItemID, final String ItemCode, final String ColorID, final String ColorName, final String SizeID, final String SizeName, final String ExpectedDate, final String BookFrom, final String BookQty, final String Rate, final String DiscountRate, final String DisPercentage, final String Remarks,final int DataSize, final int i){
+    private void CallVolleyUpdateBookedOrderToServer(final String DeviceID, final String UserID, final String SessionID, final String DivisionID, final String CompanyID, final String BranchID, final String OrderID, final String ItemID, final String ItemCode, final String ColorID, final String ColorName, final String SizeID, final String SizeName, final String ExpectedDate, final String BookFrom, final String BookQty, final String Rate, final String Mrp, final String DiscountRate, final String DisPercentage, final String Remarks,final int DataSize, final int i){
         showpDialog();
         String PartialUrl = "";
         if (StaticValues.AdvanceOrBookOrder == 0){
@@ -1746,30 +1748,41 @@ public class OrderBookingActivity extends AppCompatActivity implements TabListen
                             DialogInsertToServer(context,OutOfStock);
                         }
                     } else {
-                        JSONObject jsonObjectStock = jsonObject.getJSONObject("Result");
-                        String Stock = (jsonObjectStock.optString("Stock")==null ? "-00000" : jsonObjectStock.optString("Stock"));
-                        if (!Stock.equals("-00000")) {
-                            Map<String, String> map = new HashMap<>();
-                            map.put("OrderID", OrderID);
-                            map.put("ItemID", ItemID);
-                            map.put("ItemCode", ItemCode);
-                            map.put("ColorID", ColorID);
-                            map.put("ColorName", ColorName);
-                            map.put("SizeID", SizeID);
-                            map.put("SizeName", SizeName);
-                            map.put("ExpectedDate", ExpectedDate);
-                            map.put("Rate", Rate);
-                            map.put("DiscountRate", DiscountRate);
-                            map.put("DisPercentage", DisPercentage);
-                            map.put("Stock", Stock);
-                            map.put("BookQty", BookQty);
-                            map.put("Remarks", Remarks);
-                            OutOfStock.add(map);
-                            if (!OutOfStock.isEmpty() && DataSize == (i + 1)) {
-                                DialogInsertToServer(context, OutOfStock);
-                            }
-                        }else {
+                        Object objResult = jsonObject.get("Result");
+                        if (objResult instanceof JSONArray) {
+                            // It's an array
+                            //JSONArray jsonArray = (JSONArray)objResult;
                             MessageDialog.MessageDialog(context,"",""+Msg);
+                        }else if (objResult instanceof JSONObject) {
+                            // It's an object
+                            //interventionObject = (JSONObject)objResult;
+                            JSONObject jsonObjectStock = (JSONObject) objResult;
+                            //JSONObject jsonObjectStock = jsonObject.getJSONObject("Result");
+                            String Stock = (jsonObjectStock.optString("Stock") == null ? "-00000" : jsonObjectStock.optString("Stock"));
+                            if (!Stock.equals("-00000")) {
+                                Map<String, String> map = new HashMap<>();
+                                map.put("OrderID", OrderID);
+                                map.put("ItemID", ItemID);
+                                map.put("ItemCode", ItemCode);
+                                map.put("ColorID", ColorID);
+                                map.put("ColorName", ColorName);
+                                map.put("SizeID", SizeID);
+                                map.put("SizeName", SizeName);
+                                map.put("ExpectedDate", ExpectedDate);
+                                map.put("Rate", Rate);
+                                map.put("Mrp", Mrp);
+                                map.put("DiscountRate", DiscountRate);
+                                map.put("DisPercentage", DisPercentage);
+                                map.put("Stock", Stock);
+                                map.put("BookQty", BookQty);
+                                map.put("Remarks", Remarks);
+                                OutOfStock.add(map);
+                                if (!OutOfStock.isEmpty() && DataSize == (i + 1)) {
+                                    DialogInsertToServer(context, OutOfStock);
+                                }
+                            } else {
+                                MessageDialog.MessageDialog(context, "", "" + Msg);
+                            }
                         }
                     }
                 }catch (Exception e){
@@ -1898,7 +1911,7 @@ public class OrderBookingActivity extends AppCompatActivity implements TabListen
                                 BookFrom = "4";
                             }
                             for(int i = 0; i < DBHandler.getOutOfStockDetails().size(); i++){
-                                CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getOutOfStockDetails().get(i).get("OrderID"), DBHandler.getOutOfStockDetails().get(i).get("ItemID"), DBHandler.getOutOfStockDetails().get(i).get("ItemCode"), DBHandler.getOutOfStockDetails().get(i).get("ColorID"), DBHandler.getOutOfStockDetails().get(i).get("ColorName"), DBHandler.getOutOfStockDetails().get(i).get("SizeID"), DBHandler.getOutOfStockDetails().get(i).get("SizeName"), DBHandler.getOutOfStockDetails().get(i).get("ExpectedDate"), BookFrom, DBHandler.getOutOfStockDetails().get(i).get("BookQty"), DBHandler.getOutOfStockDetails().get(i).get("Rate"), DBHandler.getOutOfStockDetails().get(i).get("DiscountRate"), DBHandler.getOutOfStockDetails().get(i).get("DisPercentage"), DBHandler.getOutOfStockDetails().get(i).get("Remarks"),DBHandler.getOutOfStockDetails().size(),i);
+                                CallVolleyUpdateBookedOrderToServer(str[3], str[4], str[0], str[5], str[14], str[15], DBHandler.getOutOfStockDetails().get(i).get("OrderID"), DBHandler.getOutOfStockDetails().get(i).get("ItemID"), DBHandler.getOutOfStockDetails().get(i).get("ItemCode"), DBHandler.getOutOfStockDetails().get(i).get("ColorID"), DBHandler.getOutOfStockDetails().get(i).get("ColorName"), DBHandler.getOutOfStockDetails().get(i).get("SizeID"), DBHandler.getOutOfStockDetails().get(i).get("SizeName"), DBHandler.getOutOfStockDetails().get(i).get("ExpectedDate"), BookFrom, DBHandler.getOutOfStockDetails().get(i).get("BookQty"), DBHandler.getOutOfStockDetails().get(i).get("Rate"), DBHandler.getOutOfStockDetails().get(i).get("Mrp"), DBHandler.getOutOfStockDetails().get(i).get("DiscountRate"), DBHandler.getOutOfStockDetails().get(i).get("DisPercentage"), DBHandler.getOutOfStockDetails().get(i).get("Remarks"),DBHandler.getOutOfStockDetails().size(),i);
                             }
                         }
                     } else {
