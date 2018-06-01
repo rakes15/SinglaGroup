@@ -929,7 +929,7 @@ public class OrderBookingActivity extends AppCompatActivity implements TabListen
                     String[] str = editText[Xs][Ys].getTag().toString().split("/");
                     String OrderID = str[0];
                     DBHandler.updateQty(OrderID, ItemID, ColorID, SizeID, edt, ExDelDate, Xs, Remarks);
-                    System.out.println("Advance  OrderID:"+OrderID+"\t SizeID:"+SizeID + "\t Qty: "+edt+"\t Cust:"+ Xs);
+                    //System.out.println("Advance  OrderID:"+OrderID+"\t SizeID:"+SizeID + "\t Qty: "+edt+"\t Cust:"+ Xs);
                     dialog.dismiss();
                 }
             });
@@ -1075,7 +1075,7 @@ public class OrderBookingActivity extends AppCompatActivity implements TabListen
                     bundle.putInt("ImportFlag",Integer.valueOf(map.get("ImportFlag")));
                     bundle.putInt("ExportFlag",Integer.valueOf(map.get("ExportFlag")));
                     bundle.putInt("Vtype",Integer.valueOf(map.get("Vtype")));
-                    System.out.println("bundle print:"+bundle.toString());
+                    //System.out.println("bundle print:"+bundle.toString());
                     Intent in = new Intent(context, StockCheckActivity.class);
                     in.putExtra("PermissionBundle", bundle);
                     startActivity(in);
@@ -1712,7 +1712,7 @@ public class OrderBookingActivity extends AppCompatActivity implements TabListen
                         bundle.putInt("ImportFlag",Integer.valueOf(map.get("ImportFlag")));
                         bundle.putInt("ExportFlag",Integer.valueOf(map.get("ExportFlag")));
                         bundle.putInt("Vtype",Integer.valueOf(map.get("Vtype")));
-                        System.out.println("bundle print:"+bundle.toString());
+                        //System.out.println("bundle print:"+bundle.toString());
                         Intent in = new Intent(context, StockCheckActivity.class);
                         in.putExtra("PermissionBundle", bundle);
                         startActivity(in);

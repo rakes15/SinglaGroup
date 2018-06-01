@@ -695,7 +695,7 @@ public class DatabaseSqlLiteHandlerOrderBooking extends SQLiteOpenHelper {
 				}
 			}
 		}
-		System.out.println("Color:"+dataList.toString());
+		//System.out.println("Color:"+dataList.toString());
 		// returning
 		return dataList;
 	}
@@ -897,7 +897,7 @@ public class DatabaseSqlLiteHandlerOrderBooking extends SQLiteOpenHelper {
 			cursor.close();
 			db.close();
 		}
-		System.out.println("DataList"+PostFix+":"+dataList.toString());
+		//System.out.println("DataList"+PostFix+":"+dataList.toString());
 		// returning lables
 		return dataList;
 	}
@@ -927,7 +927,7 @@ public class DatabaseSqlLiteHandlerOrderBooking extends SQLiteOpenHelper {
 			cursor.close();
 			db.close();
 		}
-		System.out.println("DataList"+PostFix+":"+dataList.toString());
+		//System.out.println("DataList"+PostFix+":"+dataList.toString());
 		// returning lables
 		return dataList;
 	}
