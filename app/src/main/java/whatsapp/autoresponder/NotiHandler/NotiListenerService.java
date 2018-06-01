@@ -11,6 +11,8 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.ContactsContract;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
@@ -48,6 +50,7 @@ public class NotiListenerService extends NotificationListenerService {
     private RestApi api;
     private int fType=0;
     private String fName = "";
+    private String DeviceID = "";
     private byte[] byteExtra;
     private DBSqliteWhatsApp DBwhatsApp;
     @Override
@@ -121,7 +124,14 @@ public class NotiListenerService extends NotificationListenerService {
         final String isFromGroup = extractWhatsAppMessage.isfromGroup() ? "1" : "0";
         final String messageId = extractWhatsAppMessage.getMessageId() == null ? "" : extractWhatsAppMessage.getMessageId();
         final String activityType = extractWhatsAppMessage.getActivityType() == null ? "0" : extractWhatsAppMessage.getActivityType();
-        final String DeviceID = new MainActivity().GetSharePreferenceDeviceInfo(context).getAndroidDUID() == null ? "" : new MainActivity().GetSharePreferenceDeviceInfo(context).getAndroidDUID();
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Run your task here
+                DeviceID = new MainActivity().GetSharePreferenceDeviceInfo(context).getAndroidDUID() == null ? "" : new MainActivity().GetSharePreferenceDeviceInfo(context).getAndroidDUID();
+            }
+        }, 1000 );
         //byte[] byteNoty = GetFileByNotification(notification,extractWhatsAppMessage.getText());
         final String FileName = converName+".png";//fName;
         final String FileType = ""+fType;

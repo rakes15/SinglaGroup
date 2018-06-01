@@ -59,6 +59,7 @@ import com.singlagroup.customwidgets.DateFormatsMethods;
 import com.singlagroup.customwidgets.MessageDialog;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
