@@ -692,7 +692,7 @@ public class AccountInfoSendSelectCustomerForOrderActivity extends AppCompatActi
                                 //SendToOtherApps.sendWhatsAppNumber(context,"91"+edtWhatsAppNo.getText().toString());
                                 mWebView.setWebViewClient(new MyWebViewClient(context));
                                 mWebView.getSettings().setJavaScriptEnabled(true);
-                                mWebView.loadUrl("https://api.whatsapp.com/send?phone=91"+Mobile+"&text="+Message);
+                                mWebView.loadUrl("https://api.whatsapp.com/send?phone=91"+Mobile+"&text="+Message.replaceAll("&",""));
                             } else {
                                 edtWhatsAppNo.setError("Please enter valid Whats App No!!!");
                                 focusView = edtWhatsAppNo;
